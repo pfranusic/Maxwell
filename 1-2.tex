@@ -1,0 +1,61 @@
+%% 1-2.tex
+\section{Electric and magnetic fields}
+
+We must extend our ideas of the vectors $\bv{E}$ and $\bv{B}$.
+We have defined them in terms of the forces that are felt by a single charge $q$.
+Now we eliminate the charge and associate the vectors $\bv{E}$ and $\bv{B}$
+with \emph{the point} in space $(x, y, z)$ that the charge occupies at time $t$.
+
+Next, we associate with \emph{every} point $(x, y, z)$ in space 
+two vectors $\bv{E}$ and $\bv{B}$ which may be changing with time.
+Therefore we can view the electric and magnetic fields 
+as \emph{vector functions} of $x, y, z,$ and $t$.
+The electric field is denoted as $\bv{E}(x, y, z, t)$ and 
+the magnetic field is denoted as $\bv{B}(x, y, z, t)$.
+Each field represents three mathematical functions of $x, y, z,$ and $t$,
+since a vector is specified by its three orthogonal components.
+
+A \emph{field} is any physical quantity which takes on different values
+at different points in space.
+It is precisely because $\bv{E}$ and $\bv{B}$ can be specified at every point in space
+that they are called fields.
+
+There are simple relationships between field values at \emph{one point}
+and field values at a \emph{nearby point}.
+This fact allows us to completely describe the electric and magnetic fields
+with only a few such relationships in the form of differential equations.
+It is in terms of differential equations that the laws of electrodynamics
+are most simply written.
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+What are the units for $\bv{E}$ and $\bv{B}$?
+We can derive these from the Lorentz force $\bv{F}=q(\bv{E}+\bv{v}\times\bv{B})$ 
+given in equation (1.1).
+This vector equation may be expanded into it's three Cartesian components.
+\begin{eqnarray*}
+  F_x &=& q(E_x + v_y B_z - v_z B_y) \\
+  F_y &=& q(E_y + v_z B_x - v_x B_z) \\
+  F_z &=& q(E_z + v_x B_y - v_y B_x)
+\end{eqnarray*}
+
+The mks unit for force $\bv{F}$ is newtons (nt), 
+the unit for charge $q$ is coulombs (coul), 
+and the unit for velocity $\bv{v}$ is meters per second (mt/sec).
+Therefore the unit for electric field $\bv{E}$ is nt/coul.
+And the unit for magnetic field $\bv{B}$ is nt$\cdot$sec/coul$\cdot$mt.
+This can be demonstrated by substituting these units for the terms in 
+one of the three Lorentz equations above.
+\begin{equation*}
+  nt = coul \left( \frac{nt}{coul}
+  + \frac{mt}{sec} \cdot \frac{nt \cdot sec}{coul \cdot mt}
+  - \frac{mt}{sec} \cdot \frac{nt \cdot sec}{coul \cdot mt} \right)
+\end{equation*}
+
+Note that the unit for a magnetic field is equal to the unit for an electric field (nt/coul)
+divided by the unit for velocity (mt/sec).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+

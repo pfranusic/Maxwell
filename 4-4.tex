@@ -1,0 +1,71 @@
+%% 4-4.tex
+\section{$\bv{E} = - \grad \phi$}
+
+This section makes three points.
+The first is that $\bv{E}$ can be easily obtained from $\phi$.
+We merely need to calculate the derivative.
+That is, $\bv{E}$ is the vector derivative of $\phi$.
+We first express $\Delta W$ as the difference in potential energy
+between two points $(x,y,z)$ and $(x+\Delta x,y,z)$.
+\textcolor{red}{How is this justified?}
+We then use a partial derivative to approximate $\Delta W$ for small $\Delta x$.
+\textcolor{red}{And this?}
+%% nonumber
+\begin{eqnarray*}
+  \Delta W &=& \phi(x + \Delta x, y, z) - \phi(x,y,z) \\
+  &=& \dfdx{\phi}{x} \Delta x
+\end{eqnarray*}
+
+We can also use Eq. (4.19) to express $\Delta W$ as an integral.
+\textcolor{red}{Then this is \emph{somehow} simplified with $- E_x \Delta x$.}
+%% nonumber
+\begin{eqnarray*}
+  \Delta W &=& - \int \bv{E} \cdot d\bv{s} \\
+  &=& -E_x \Delta x
+\end{eqnarray*}
+
+These first equation for $\Delta W$ has $\partial \phi/\partial x$ as the coefficient for $\Delta x$.
+The second equation has $-E_x$. So they must be equal.
+We use the same logic for $E_y$ and $E_z$.
+%% Eq. (4.26)
+\begin{eqnarray}
+  E_x &=& - \dfdx{\phi}{x} \\
+  E_y &=& - \dfdx{\phi}{y} \nonumber\\
+  E_z &=& - \dfdx{\phi}{z} \nonumber
+\end{eqnarray}
+
+We now use the $\grad$ operator to collapse these three equations into one.
+%% Eq. (4.27)
+\begin{equation}
+  \bv{E} = - \grad \phi
+\end{equation}
+
+Note that the work $\Delta W$ to move a unit charge from $a$ to $b$
+can also be expressed in the same form as the Fundamental Theorem.
+%% Eq. (4.28)
+\begin{equation}
+  \int_a^b \grad \phi \cdot d\bv{s} = \phi(b) - \phi(a)
+\end{equation}
+
+The second point is that in electrostatics, the electric field is curl-free.
+In the cross-product $\grad \times \bv{E}$ we replace the $\bv{E}$ with $-\grad\phi$
+which gives us $-(\grad\times\grad)\phi$.
+Since the cross-product of any vector with itself is the zero vector $\bv{0}=(0,0,0)$
+we now have
+%% Eq. (4.29)
+\begin{equation}
+  \grad \times \bv{E} = \bv{0}
+\end{equation}
+%\begin{eqnarray}
+%  \grad \times \bv{E}
+%  &=& \grad \times (-\grad\phi) \nonumber\\
+%  &=& - (\grad \times \grad)\phi \nonumber\\
+%  &=& (0,0,0) \nonumber\\
+%  \grad \times \bv{E} &=& 0
+%\end{eqnarray}
+
+The third point is that for any \emph{radial} force
+the work done is independent of the path, and there exists a potential.
+For example, the electrical force from a single charge is 
+radial and spherically symmetrical.
+

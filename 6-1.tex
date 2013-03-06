@@ -1,0 +1,63 @@
+%% 6-1.tex
+\section{Equations of the electrostatic potential}
+
+Electrostatics is the study of stationary electric charges.
+If charges do not move, then the time derivatives in Maxwell's equations are all zero.
+I.e., $\partial\bv{E}/\partial t=0$ and $\partial\bv{B}/\partial t=0$.
+Also, the electric field $\bv{E}$ is distinct from the magnetic field $\bv{B}$.
+This leaves just two equations for electrostatics.
+%% Eq. (6.1)
+\begin{equation}
+  \grad \cdot \bv{E} = \frac{\rho}{\epsilon_0}
+\end{equation}
+%% Eq. (6.2)
+\begin{equation}
+  \grad \times \bv{E} = 0
+\end{equation}
+
+Theorem (2.50) says that if $\grad\times\bv{E}=0$ then
+there is a scalar function $\phi$ such that $\bv{E}=\grad\phi$.
+\textcolor{red}{Somehow the sign changes to get}
+%% Eq. (6.3)
+\begin{equation}
+  \bv{E} = - \grad \phi
+\end{equation}
+
+We substitute $-\grad\phi$ for $\bv{E}$ in Equation (6.1) to get
+%% Eq. (6.4)
+\begin{equation}
+  \grad \cdot \grad \phi = - \frac{\rho}{\epsilon_0}
+\end{equation}
+
+Equation (2.54) provided the definition of the Laplacian $\nabla^2$.
+This allows us to rewrite the left side in terms of the Laplacian.
+%% Eq. (6.5)
+\begin{equation}
+  \grad \cdot \grad \phi = \nabla^2 \phi
+  = \dfdx{^2\phi}{x^2} + \dfdx{^2\phi}{y^2} + \dfdx{^2\phi}{z^2} 
+\end{equation}
+
+We substitute $\nabla^2\phi$ for $\grad\cdot\grad\phi$ in Equation (6.4).
+This gives us the Poisson equation.
+%% Eq. (6.6)
+\begin{equation}
+  \nabla^2 \phi = - \frac{\rho}{\epsilon_0}
+\end{equation}
+
+$\rho$ is the electric charge density function, and
+$\rho(x,y,z)$ is the amount of charge per unit volume at the point $(x,y,z)$.
+$\phi$ is the electric potential function, and 
+$\phi(x,y,z)$ is the work required to carry one unit of charge from some point to $(x,y,z)$.
+\textcolor{red}{I need to explain the following equation, which comes from (4.25).}
+%% Eq. (6.7)
+\begin{equation}
+  \phi(1) = \int \frac{\rho(2) dV_2}{4\pi\epsilon_0 r_{12}}
+\end{equation}
+
+This integral equation (6.7) is the solution to the differential equation (6.6).
+It's also the prototype solution for many differential equations in physics
+that have the form
+\begin{equation*}
+  \nabla^2 (\mathrm{something}) = (\mathrm{something\ else})
+\end{equation*}
+

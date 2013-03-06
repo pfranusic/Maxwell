@@ -1,0 +1,63 @@
+%% 2-6.tex
+\section{The differential equation of heat flow}
+
+We can use vector notation to describe all sorts of elementary physics relations.
+In this section we describe heat flow using vector notation.
+We are given the slab of material in Figure 2-7(a).
+$A$ is the area of the large face.
+$d$ is the thickness of the slab.
+$T_2$ is the temperature on the hot face.
+$T_1$ is the area on the cold face.
+$J$ is the thermal energy that passes through the slab per unit time.
+$\kappa$ is the \emph{thermal conductivity} constant.
+%% Eq. (2.42)
+\begin{equation}
+  J = \kappa \big( T_2 - T_1 \big) \frac{A}{d}
+\end{equation}
+
+Now we complicate things.
+The slab becomes odd-shaped and the temperature within the slab
+varies in peculiar ways.
+Our strategy is to describe infinitesimal differences.
+We take an infinitesimal piece of the slab, as shown in Figure 2-7(b).
+The two parallel curves are isothermals.
+$\Delta A$ is the area of the small face (not shown in the figure).
+$\Delta s$ is the distance between the isothermals.
+$\Delta T$ is the difference in temperature between the isothermals.
+$\kappa$ is the same thermal conductivity constant as before.
+%% Eq. (2.43)
+\begin{equation}
+  \Delta J = \kappa \Delta T \frac{\Delta A}{\Delta s}
+\end{equation}
+
+\newpage
+Now we transform the scalar equation (2.43) to a vector equation (2.44).
+This is explained using magnitudes.
+The first step is to divide both sides by $\Delta A$ and rearrange.
+This gets rid of the $\Delta A$ on the right side.
+\begin{equation*}
+  \frac{\Delta J}{\Delta A} = \kappa \frac{\Delta T}{\Delta s}
+\end{equation*}
+
+The first transformation is from scalar $\Delta J / \Delta A$ to vector $\bv{h}$.
+In equation (2.9), $\Delta J / \Delta A$ was defined as the magnitude of $\bv{h}$.
+The direction of $\bv{h}$ is perpendicular to the isothermals.
+\begin{equation*}
+  \frac{\Delta J}{\Delta A} = | \bv{h} |
+\end{equation*}
+
+The other transformation is from scalar $\Delta T / \Delta s$ to vector $\grad T$.
+$\Delta T / \Delta s$ is the rate of change of $T$ with position.
+It's the maximum rate of change, and therefore the magnitude of $\grad T$.
+\begin{equation*}
+% \frac{\Delta T}{\Delta s} \stackrel{?}{\to} \grad T
+  \frac{\Delta T}{\Delta s} = | \grad T |
+\end{equation*}
+
+We substitute these two transformations into Equation (2.43) and then drop the magnitude bars.
+The direction of $\grad T$ is opposite that of $\bv{h}$, so there's a sign change.
+%% Eq. (2.44)
+\begin{equation}
+  \bv{h} = - \kappa \grad T
+\end{equation}
+

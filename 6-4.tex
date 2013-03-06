@@ -1,0 +1,158 @@
+%% 6-4.tex
+\section{The dipole potential as a gradient}
+
+We wish to demonstrate that
+\[ \grad \left(\frac{1}{r}\right) = -\frac{\bv{r}}{r^3} \]
+
+We begin with vector $\bv{r}=(x,y,z)$ and magnitude $r=\sqrt{x^2+y^2+z^2}$.
+To simply things, we let $u=r^2$.  Then we have
+\[ u^{-1/2} = \frac{1}{r} \qquad u^{-3/2} = \frac{1}{r^3} \]
+
+And since $u=x^2+y^2+z^2$ we have the three partial derivatives
+\[ \dfdx{u}{x}=2x \qquad \dfdx{u}{y}=2y \qquad \dfdx{u}{z}=2z \]
+
+Now we're ready to calculate the gradient of $1/r$.
+We expand the gradient vector into its three components,
+replace each $1/r$ with $u^{-1/2}$,
+and apply the chain rule to each component.
+\begin{eqnarray*}
+  \grad \left(\frac{1}{r}\right) 
+  &=& \left( \dfdx{}{x}\!\left(\frac{1}{r}\right),\quad
+             \dfdx{}{y}\!\left(\frac{1}{r}\right),\quad
+	     \dfdx{}{z}\!\left(\frac{1}{r}\right) \right) \\
+  &=& \left( \dfdx{}{x}u^{-1/2},\quad
+	     \dfdx{}{y}u^{-1/2},\quad
+	     \dfdx{}{z}u^{-1/2} \right) \\
+  &=& \left( \dfdx{}{u}u^{-1/2}\;\dfdx{u}{x} \;,\;
+             \dfdx{}{u}u^{-1/2}\;\dfdx{u}{y} \;,\;
+             \dfdx{}{u}u^{-1/2}\;\dfdx{u}{z} \right)
+\end{eqnarray*}
+
+We take the derivatives, replace each $u^{-3/2}$ with $1/r^3$,
+and collapse the three components into the vector $\bv{r}$
+times the constant $-1/r^3$.
+\begin{eqnarray*}
+  &=& \left( -\frac{1}{2}u^{-3/2}\;2x,\quad
+	     -\frac{1}{2}u^{-3/2}\;2y,\quad
+	     -\frac{1}{2}u^{-3/2}\;2z \right) \\
+  &=& \left( -\frac{1}{r^3}x,\quad -\frac{1}{r^3}y,\quad -\frac{1}{r^3}z \right) \\
+  &=& -\frac{1}{r^3} \bigg(x,\; y,\; z \bigg) \\
+  &=& -\frac{\bv{r}}{r^3} \qquad\Box
+\end{eqnarray*}
+
+We can now replace the $\bv{r}/r^3$ term in Equation (6.13) 
+and write the dipole potential in a new form.
+%% Eq. (6.16)
+\begin{equation}
+  \phi = - \frac{1}{4\pi\epsilon_0} \bv{p} \cdot \grad \left( \frac{1}{r} \right)
+\end{equation}
+
+Remember that $\bv{e}_r=\bv{r}/r$ is the unit radial vector
+where $\bv{r}=(x,y,z)$ and $r=\sqrt{x^2+y^2+z^2}$. Then
+%% nonumber
+\begin{equation*}
+  \grad \left( \frac{1}{r} \right) = - \frac{\bv{r}}{r^3}
+  = - \frac{\bv{e}_r}{r^2}
+\end{equation*}
+
+The dipole potential $\phi$ can also be derived using the superposition principle.
+Simply compute the two potentials $\phi_+$ and $\phi_-$ and then add them together.
+We begin with the potential $\phi_0$ at the point $P$ at $(x,y,z)$ 
+for a charge that resides at the orgin.
+We use Equation (4.23) but omit the $1/4\pi\epsilon_0$ term for the sake of convenience.
+%% nonumber
+\begin{equation*}
+  \phi_0 = \frac{q}{r}
+\end{equation*}
+
+We need the potential $\phi_+$ at point $P$ for the positive charge $+q$
+that resides $\Delta z$ above the orgin.
+%% Eq. (6.17)
+\begin{eqnarray}
+  \phi_+ &=& \phi_0 \; + \; \Delta \phi_{+} \nonumber\\
+  &=& \left[\frac{+q}{r}\right] + \left[\dfdx{\phi_0}{z}\;(-\Delta z)\right] \nonumber\\
+  &=& \frac{+q}{r} - \dfdx{}{z}\left(\frac{+q}{r}\right) \frac{d}{2}
+\end{eqnarray}
+
+We also need the potential $\phi_-$ at point $P$ for the negative charge $-q$
+that resides $\Delta z$ below the orgin.
+%% Eq. (6.18)
+\begin{eqnarray}
+  \phi_- &=& \phi_0 \; + \; \Delta \phi_{-} \nonumber\\
+  &=& \left[\frac{-q}{r}\right] + \left[\dfdx{\phi_0}{z}\;(+\Delta z)\right] \nonumber\\
+  &=& \frac{-q}{r} + \dfdx{}{z}\left(\frac{-q}{r}\right) \frac{d}{2}
+\end{eqnarray}
+
+Finally we add the two potentials.
+The two $q/r$ terms cancel each other, the two $-\partial/\partial z$ terms add together,
+and we move the $q$ outside the parentheses.
+%% Eq. (6.19)
+\begin{eqnarray}
+  \phi &=& \phi_{+} \; + \; \phi_{-} \nonumber\\
+  &=& \left[ \frac{+q}{r} - \dfdx{}{z}\left(\frac{+q}{r}\right) \frac{d}{2} \right]
+    + \left[ \frac{-q}{r} + \dfdx{}{z}\left(\frac{-q}{r}\right) \frac{d}{2} \right] \nonumber\\
+  &=& - \dfdx{}{z} \left(\frac{1}{r}\right) qd
+\end{eqnarray}
+
+To get Equation (6.19) we oriented the dipole on the $z$-axis,
+so that the distance from $P$ was simply $\Delta z$.
+But in the general case, we use $\Delta\bv{r}$ as the distance,
+and the formulas for $\Delta\phi_+$ and $\Delta\phi_-$ are scalar products
+to take care of all three dimensions.
+We replace $\Delta\bv{r}$ with $\bv{d}/2$.
+%% nonumber
+\begin{eqnarray*}
+  \Delta\phi_+ &=& \grad\left(\frac{+q}{r}\right)\cdot\left(-\Delta\bv{r}\right) 
+  \quad = \quad -\grad\left(\frac{q}{r}\right)\cdot\frac{\bv{d}}{2} \\
+  \Delta\phi_- &=& \grad\left(\frac{-q}{r}\right)\cdot\left(+\Delta\bv{r}\right)
+  \quad = \quad -\grad\left(\frac{q}{r}\right)\cdot\frac{\bv{d}}{2}
+\end{eqnarray*}
+
+The equations for $\phi_+$ and $\phi_-$ then become
+%% nonumber
+\begin{eqnarray*}
+  \phi_+ &=& \phi_0 \; + \; \Delta\phi_+ \\
+         &=& \frac{+q}{r} - \grad\left(\frac{q}{r}\right) \cdot \frac{\bv{d}}{2} \\
+  \phi_- &=& \phi_0 \; + \; \Delta\phi_- \\
+         &=& \frac{-q}{r} - \grad\left(\frac{q}{r}\right) \cdot \frac{\bv{d}}{2} \\
+\end{eqnarray*}
+
+We add $\phi_+$ and $\phi_-$ to get $\phi$.
+As before, the $q/r$ terms cancel, the partial derivative terms add together, 
+and we move the $q$ outside the parentheses.
+We also put back the $1/4\pi\epsilon_0$ term, which then multiplies each of the three
+vector components.
+%% nonumber
+\begin{eqnarray*}
+  \phi &=& -\frac{1}{4\pi\epsilon_0}\grad\left(\frac{1}{r}\right) \cdot q \bv{d} \\
+       &=& -\grad \left(\frac{1}{4\pi\epsilon_0 r}\right) \cdot q \bv{d}
+\end{eqnarray*}
+
+Let $\bv{p}=q\bv{d}$ and
+unit point charge potential $\Phi_0=1/4\pi\epsilon_0 r$. Then
+%% Eq. (6.20)
+\begin{equation}
+  \phi\; = \; -\grad\Phi_0 \cdot \bv{p} 
+\end{equation}
+
+\textcolor{red}{The last three equations in this section are not numbered.
+They are used to make the point that a complex problem can be solved
+using the superposition principle.
+I don't know how these three equations are derived.
+I'll punt for now and return to them later.}
+
+%% nonumber
+\begin{equation*}
+  \sigma = \sigma_0 \cos \theta
+\end{equation*}
+
+%% nonumber
+\begin{equation*}
+  p = \frac{4\pi\sigma_0 a^3}{3}
+\end{equation*}
+
+%% nonumber
+\begin{equation*}
+  E = \frac{\sigma_0}{3\epsilon_0}
+\end{equation*}
+

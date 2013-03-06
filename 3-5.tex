@@ -1,0 +1,39 @@
+%% 3-5.tex
+\section{The circulation of a vector field}
+
+If $\bv{C}$ is any vector field, we take its component along a curved line
+and take the integral of this component all the way around a complete loop.
+The integral is called the \emph{circulation} of the vector field around the loop.
+
+Consider Figure 3-7 with vector field $\bv{C}$ and closed loop $\Gamma$.
+The tangential component of $\bv{C}$ at any point along the loop is $C_t$.
+The closed loop consists of an infinite number of infinitesimal vector segments 
+$d\bv{s}=(ds_x,ds_y,ds_z)$.
+The magnitude of $d\bv{s}$ at any point along the loop is $ds$.
+
+Given the two vectors $\bv{C}$ and $d\bv{s}$, their dot product is $|\bv{C}||d\bv{s}|\cos\theta$.
+Now the tangential component $C_t = |\bv{C}|\cos\theta$.
+And the magnitude $ds=|d\bv{s}|$.
+Therefore we have the following identity for the integral all the way around $\Gamma$.
+The circle on the integral sign means that the integral is taken around the entire loop.
+%% Eq. (3.30)
+\begin{equation}
+  \oint_\Gamma C_t \; ds = \oint_\Gamma \bv{C} \cdot d\bv{s}
+\end{equation}
+
+Consider Figure 3-8.
+We split $\Gamma$ into two smaller loops $\Gamma_1$ and $\Gamma_2$.
+Both of these smaller loops have the segment $\Gamma_{ab}$ in common.
+However, the directions of $d\bv{s}_1$ and $d\bv{s}_2$ are opposite each other.
+When we compute the circulations around the smaller loops and then add them together,
+the two partial circulations for $\Gamma_{ab}$ cancel each other,
+so that the sum is the same as the circulation around the big loop $\Gamma$.
+
+Now consider Figure 3-9.
+Here we have some arbitrary surface bounded by a closed loop $\Gamma$.
+We subdivide the surface into an infinite number of infinitesimal squares.
+And since the squares are so small, we may make the assumption that each square is flat, 
+even though the surface itself may not be flat at all.
+So now we can calculate the circulation around $\Gamma$.
+It is the sum of the circulations around each of the infinitesimal squares.
+

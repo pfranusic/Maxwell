@@ -1,0 +1,115 @@
+%% 2-5.tex
+\section{Operations with $\grad$}
+
+We can compute the dot product of $\grad$ with the vector field $\bv{h}$.
+We use equation (2.7), the sum of three products.
+Remember that $\grad = (\nabla_x, \nabla_y, \nabla_z)$ and $\bv{h} = (h_x,h_y,h_z)$.
+% Eq. (2.32)
+\begin{equation}
+  \grad \cdot \bv{h} = \nabla_x h_x + \nabla_y h_y + \nabla_z h_z
+\end{equation}
+
+If we replace the grad terms $(\nabla_x, \nabla_y, \nabla_z)$ with
+the hungry partials in equation (2.29) we get
+% Eq. (2.33)
+\begin{equation}
+  \grad \cdot \bv{h} = \dfdx{h_x}{x} + \dfdx{h_y}{y} + \dfdx{h_z}{z}
+\end{equation}
+
+We can use a different coordinate system.
+Instead of $\grad$ we use $\grad'$.  This gives us
+% Eq. (2.34)
+\begin{equation}
+  \grad' \cdot \bv{h} = \dfdx{h_{x'}}{x'} + \dfdx{h_{y'}}{y'} + \dfdx{h_{z'}}{z'}
+\end{equation}
+
+Even though we have two different equations for two different coordinate systems,
+the two products are equal, because the scalar product of two vectors is invariant 
+under a coordinate transformation.
+The vector field $\bv{h}$ is the same in both systems.
+The vector operators $\grad$ and $\grad'$ are also the same ---
+they just have different variable names, depending on the coordinate system.
+% Eq. (2.35)
+\begin{equation}
+  \grad' \cdot \bv{h} = \grad \cdot \bv{h}
+\end{equation}
+
+The dot product of $\grad$ with any vector is called the \emph{divergence}.
+% Eq. (2.36)
+\begin{equation}
+  \grad \cdot \bv{h} = \mathrm{div\ } \bv{h}
+\end{equation}
+
+The cross product of $\grad$ with any vector is called the \emph{curl}.
+% Eq. (2.37)
+\begin{equation}
+  \grad \times \bv{h} = \mathrm{curl\ } \bv{h}
+\end{equation}
+
+The curl is a vector with three components.
+The calculation of each component is specified in equation (2.2)
+and given again here, but with the partial terms.
+% Eq. (2.38)
+\begin{equation}
+  \big( \grad \times \bv{h} \big)_z
+  = \nabla_x h_y - \nabla_y h_x
+  = \dfdx{h_y}{x} - \dfdx{h_x}{y}
+\end{equation}
+% Eq. (2.39)
+\begin{equation}
+  \big( \grad \times \bv{h} \big)_x
+  = \nabla_y h_z - \nabla_z h_y
+  = \dfdx{h_z}{y} - \dfdx{h_y}{z}
+\end{equation}
+% Eq. (2.40)
+\begin{equation}
+  \big( \grad \times \bv{h} \big)_y
+  = \nabla_z h_x - \nabla_x h_z
+  = \dfdx{h_x}{z} - \dfdx{h_z}{x}
+\end{equation}
+
+The vector operator $\grad$ allows us to write Maxwell's equations in a succinct form.
+In the first equation, $\rho$ (rho) represents the \emph{electric charge density},
+the amount of charge per unit volume.
+In the fourth equation, $\bv{j}$ represents the \emph{electric current density},
+the rate at which charge flows through a unit area per second.
+Of course, $c$ represents the speed of light, and $\epsilon_0$ is a convenient constant.
+% Eq. (2.41)
+\begin{center}
+  \emph{Maxwell's\ Equations}
+\end{center}
+\begin{eqnarray}
+  \grad \cdot \bv{E}       &=&  \frac{\rho}{\epsilon_0} \nonumber \\
+  \nonumber \\
+  \grad \times \bv{E}      &=&  - \dfdx{\bv{B}}{t} \\
+  \nonumber \\
+  \grad \cdot \bv{B}       &=&  0 \nonumber \\
+  \nonumber \\
+  c^2 \grad \times \bv{B}  &=&  \dfdx{\bv{E}}{t} + \frac{\bv{j}}{\epsilon_0} \nonumber
+\end{eqnarray}
+
+
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{equation*}
+  \grad = \Big( \nabla_x, \nabla_y, \nabla_z \Big)
+  = \Bigg( \dfdx{}{x}, \dfdx{}{y}, \dfdx{}{z} \Bigg)
+\end{equation*}
+
+\begin{equation*}
+  \grad' = \Big( \nabla'_x, \nabla'_y, \nabla'_z \Big)
+  = \Bigg( \dfdx{}{x'}, \dfdx{}{y'}, \dfdx{}{z'} \Bigg)
+\end{equation*}
+
+\begin{equation*}
+  \grad \times \bv{h} = \Big(
+  \big( \grad \times \bv{h} \big)_x,
+  \big( \grad \times \bv{h} \big)_y,
+  \big( \grad \times \bv{h} \big)_z
+  \Big)
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}

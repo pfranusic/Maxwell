@@ -1,0 +1,96 @@
+%% 3-6.tex
+\section{The circulation around a square; \\ Stokes' theorem}
+
+We wish to derive an equation for the circulation around a square.
+We'll make some assumptions in order to simplify the derivation.
+The surface in Figure 3-9 may not be flat,
+but each square is so small that we can assume it to be flat.
+We'll also assume that our square lies in a plane which is
+orthogonal to one of the Cartesian axes, say, the $xy$ plane.
+Finally, we'll assume that the sides of our square
+are parallel to the $x$ and $y$ axes.
+
+Recall that a vector field $\bv{C}$ can be thought of as
+the gradient of a scalar field, e.g. temperature $T$.
+Each component of the vector specifies a rate of change
+in one of three directions. In the case of temperature,
+the units for each component might be degrees per centimeter.
+\[ \bv{C} = \grad T = \Bigg( \dfdx{T}{x}, \dfdx{T}{y}, \dfdx{T}{z} \Bigg) \]
+
+Consider the square in Figure 3-10.
+The circulation is expressed as the sum of four terms.
+Each term is the product of a tangential component of $\bv{C}$ and the length of a side.
+%% Eq. (3.31)
+\begin{equation}
+  \oint_\Gamma \bv{C} \cdot d\bv{s} =
+  C_x(1) \Delta x + C_y(2) \Delta y - C_x(3) \Delta x - C_y(4) \Delta y
+\end{equation}
+
+We combine the two terms that contain $\Delta x$.
+%% Eq. (3.32)
+\begin{equation}
+  [C_x(1) - C_x(3)] \; \Delta x
+\end{equation}
+
+The distance between side 1 and side 3 is small,
+and therefore the difference between $C_x(1)$ and $C_x(3)$ is small.  But it's not zero.
+The two sides are separated in the $y$ direction by $\Delta y$.
+The rate of change between the two $C_x$ values is $\partial C_x / \partial y$.
+Therefore we have
+%% Eq. (3.33)
+\begin{equation}
+  C_x(3) = C_x(1) + \dfdx{C_x}{y} \; \Delta y
+\end{equation}
+
+We replace the two $\Delta x$ terms in equation (3.31) with this difference.
+%% Eq. (3.34)
+\begin{equation}
+  [C_x(1) - C_x(3)] \Delta x = - \dfdx{C_x}{y} \; \Delta x \; \Delta y
+\end{equation}
+
+We apply the same logic to replace the two $\Delta y$ terms.
+%% Eq. (3.35)
+\begin{equation}
+  C_y(2) \Delta y - C_y(4) \Delta y = \dfdx{C_y}{x} \; \Delta x \; \Delta y
+\end{equation}
+
+This gives us the product of a difference and an area.
+%% Eq. (3.36)
+\begin{equation}
+  \bigg( \dfdx{C_y}{x} - \dfdx{C_x}{y} \bigg) \; \Delta x \; \Delta y
+\end{equation}
+
+The difference term just happens to be the $z$ component of 
+the cross-product $(\grad \times \bv{C})$.
+And we can let area $\Delta a = \Delta x \Delta y$.
+This gives us 
+\[ (\grad \times \bv{C})_z \Delta a \]
+
+Now we'll eliminate the Cartesian coordinates altogether.
+In Figure 3-10, the $z$-axis is normal to our square in the $xy$ plane.
+But if our square were not in the $xy$ plane, it would still have a normal axis $n$.
+So we can replace the $z$ and simply use $n$ instead.
+This gives us 
+\[ (\grad \times \bv{C})_n \Delta a \]
+
+We replace the four terms with the single cross-product term.
+%% Eq. (3.37)
+\begin{equation}
+  \oint \bv{C} \cdot d\bv{s}
+  = (\grad \times \bv{C})_n \; \Delta a 
+  = (\grad \times \bv{C}) \cdot \bv{n} \; \Delta a
+\end{equation}
+
+Finally, we take the closed loop $\Gamma$, fill it in with some surface,
+subdivide that surface into an infinite number of infinitesimal squares,
+compute the circulation around each square, and then take the sum.
+%% Eq. (3.38)
+
+\hspace{2em} \textsc{Stokes' Theorem:}
+\begin{equation}
+  \oint_\Gamma \bv{C} \cdot d\bv{s} = \int_S (\grad \times \bv{C})_n \; da
+\end{equation}
+\hspace{2em} where $S$ is any surface bounded by $\Gamma$.
+
+\newpage
+

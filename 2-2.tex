@@ -1,0 +1,299 @@
+%% 2-2.tex
+\section{Scalar and vector fields --- $T$ and $\bv{h}$}
+
+%% intro
+Our ultimate goal is to explain the meaning of the laws given in Chapter 1.
+But to do this we must understand the mathematics of vector fields.
+We first review vector algebra: scalars, vectors, scalar products, and vector products.
+
+%% def of scalar
+A \emph{scalar} $m$ is a value that consists of a single component.
+The component is an element of the set of real numbers.
+\begin{equation*}
+  m \in \mathcal{R}
+\end{equation*}
+
+%% def of vector
+A \emph{vector} $\bv{A}$ is a value that has three components --- $A_x$, $A_y$, and $A_z$ ---
+from the rectangular coordinate system.
+Each component is an element of the set of real numbers.
+\begin{equation*}
+  \bv{A} = \Big( \; A_x \; , \; A_y \; , \; A_z \; \Big)
+\end{equation*}
+
+%% def of magnitude
+The \emph{magnitude} of vector $\bv{A}$ is the scalar $|\bv{A}|$,
+sometimes written simply as $A$.
+We use the Pythagorean theorem, extended for three dimensions, to calculate the magnitude $|\bv{A}|$.
+\begin{equation*}
+  |\bv{A}| = \sqrt{ A_x^2 + A_y^2 + A_z^2 }
+\end{equation*}
+
+%% def of vector addition
+To add two vectors $\bv{A}$ and $\bv{B}$, we simply add their components.
+\begin{equation*}
+  \bv{A} + \bv{B} = \Big(\big(A_x + B_x\big), \big(A_y + B_y\big), \big(A_z + B_z\big) \Big)
+\end{equation*}
+
+%% def of simple product
+The product of a scalar $m$ and a vector $\bv{A}$ is a vector.
+Each of the three components of $\bv{A}$ is multiplied by $m$.
+\begin{equation*}
+  m \bv{A} = \Big(\big(m A_x\big),\big(m A_y\big),\big( m A_z\big)\Big)
+\end{equation*}
+
+%% Eq. (2.1)
+%% def of scalar product
+The \emph{scalar product} of two vectors $\bv{A}$ and $\bv{B}$ is a scalar.
+The scalar product is sometimes called the \emph{dot product}.
+It has two forms.
+In the first form, each of the three components of vector $\bv{A}$ are multiplied by 
+the three corresponding components of vector $\bv{B}$.
+In the second form, the magnitudes of $\bv{A}$ and $\bv{B}$ 
+are multiplied by the cosine of the angle $\theta$ that separates $\bv{A}$ and $\bv{B}$.
+\begin{eqnarray}
+  \bv{A} \cdot \bv{B} &=& \mathrm{scalar} \\
+  &=& A_x B_x + A_y B_y + A_z B_z \nonumber \\
+  &=& A B \cos \theta \nonumber
+\end{eqnarray}
+
+%% Eq. (2.2)
+%% def of vector product
+The \emph{vector product} of two vectors $\bv{A}$ and $\bv{B}$ is a vector.
+The vector product is sometimes called the \emph{cross product}.
+Each component of the result is a difference of products.
+% The resulting vector $(\bv{A} \times \bv{B})$ is at right angles 
+% to both $\bv{A}$ and $\bv{B}$ and has a magnitude of $AB$.
+\begin{eqnarray}
+  \bv{A} \times \bv{B} &=& \mathrm{vector} \\
+  &=& \Big( \big( A_y B_z - A_z B_y \big),
+            \big( A_z B_x - A_x B_z \big), 
+	    \big( A_x B_y - A_y B_x \big) \Big) \nonumber
+\end{eqnarray}
+
+%% Equation (2.3)
+The vector product of $\bv{A}$ with itself is simply 
+the zero vector $(0,0,0)$ which is represented by the symbol $\boldsymbol{0}$.
+The proof is quick.
+\begin{equation}
+  \bv{A} \times \bv{A} = \boldsymbol{0}
+\end{equation}
+
+%% Equations (2.4), (2.5), (2.6).
+Here are some identities.
+The proofs are simple but somewhat tedious.
+%% Eq. (2.4)
+\begin{equation}
+  \bv{A} \cdot (\bv{A} \times \bv{B}) = 0
+\end{equation}
+%% Eq. (2.5)
+\begin{equation}
+  \bv{A} \cdot (\bv{B} \times \bv{C}) = (\bv{A} \times \bv{B}) \cdot \bv{C}
+\end{equation}
+%% Eq. (2.6)
+\begin{equation}
+  \bv{A} \times (\bv{B} \times \bv{C}) = \bv{B}(\bv{A} \cdot \bv{C}) - \bv{C}(\bv{A} \cdot \bv{B})
+\end{equation}
+
+
+%% Eq. (2.7)
+The \emph{total differential} for three dimensions looks like 
+the scalar product of two vectors.
+\begin{equation}
+  \Delta f(x,y,z) = \dfdx{f}{x} \Delta x + \dfdx{f}{y} \Delta y + \dfdx{f}{z} \Delta z
+\end{equation}
+
+
+%% Eq. (2.8)
+When we have a second derivative with two coefficients in the denominator,
+the coefficients are commutative.
+\begin{equation}
+  \frac{\partial ^2 f}{\partial x \partial y} = \frac{\partial ^2 f}{\partial y \partial x}
+\end{equation}
+
+%% def of scalar field
+A \emph{scalar field} is a set of scalars, where each scalar is associated
+with a unique position $(x,y,z)$ in space.
+For example, consider a concrete slab, one meter square and ten centimeters thick,
+where the top of the slab is heated by the sun and the bottom contacts some frozen ground.
+Heat flows through the slab from top to bottom.
+At any instant in time, each point inside the slab has a specific temperature $T$
+(degrees Celsius), and we have the scalar function $T(x,y,z)$.
+This example demonstrates that temperature is a scalar field.
+
+%% def of vector field
+A \emph{vector field} is a set of vectors, where each vector is associated
+with a unique position $(x,y,z)$ in space.
+For example, consider the concrete slab again.
+At any instant in time, each point inside the slab has a specific heat flow $\bv{h}$
+with a specific rate (Joules per square meter) and a specific direction.
+We therefore have the vector function $\bv{h}(x,y,z)$ which specifies
+a heat flow vector for each point inside the slab at some instant.
+This example demonstrates that heat flow is a vector field.
+
+%% Eq. (2.9)
+%% heat flow vector equation
+A \emph{unit vector} is a vector with a magnitude of 1.
+We can use a unit vector to specify the heat flow vector $\bv{h}$.
+Let $\Delta J$ be the amount of thermal energy that passes through a small area $\Delta a$.
+Let $\bv{e}_f$ be a unit vector ($f \equiv$ flow) that points in the same direction as $\bv{h}$.
+Then the magnitude of $\bv{h}$ is $\Delta J / \Delta a$ and 
+\begin{equation}
+  \bv{h} = \frac{\Delta J}{\Delta a} \bv{e}_f
+\end{equation}
+
+%% Eq. (2.10)
+%% Scalar product of heat flow vector and normal unit vector.
+
+We wish to specify how much heat flows through a small surface
+at \emph{any} angle with respect to the flow.  For example,
+we wish to specify how much heat flows through the surface $\Delta a_2$ in Figure 2-4.
+
+The unit vector $\bv{n}$ is normal to surface $\Delta a_2$.
+The heat flow vector $\bv{h}$ is normal to surface $\Delta a_1$
+and points in a different direction than unit vector $\bv{n}$.
+The two vectors are separated by the angle $\theta$.
+The same amount of heat flows through $\Delta a_1$ and $\Delta a_2$.
+These two surface areas are related such that $\Delta a_1 = \Delta a_2 \cos \theta$.
+For proof, consider the prism implied in Figure 2-4.
+
+%% Extra figure, supports Fig. 2-4.
+%% This is a small right triangle.
+%% Frame is 5.00 cm wide and 3.00 cm tall.
+%% The bottom left-hand corner is at (-3.50, 0.00).
+\setlength{\unitlength}{1cm}
+\begin{picture}(5.00,3.00)(-3.50, 0.00)
+%% Draw the frame boundries.
+%% (These may be commented out.)
+% \put( 0.00, 3.00){\line( 1, 0){4.75}} % North boundry
+% \put( 0.00, 0.00){\line( 1, 0){4.75}} % South boundry
+% \put( 4.75, 0.00){\line( 0, 1){3.00}} % West boundry
+% \put( 0.00, 0.00){\line( 0, 1){3.00}} % West boundry
+%% Draw the triangle.
+\put( 1.00, 1.40){\line( 3,-1){2.56}} % Hypotenuse
+\put( 1.00, 1.40){\line( 5, 2){2.00}} % Opposite
+\put( 3.00, 2.20){\line( 1,-3){0.55}} % Adjacent
+%% Draw the various symbols.
+\put( 2.73, 1.67){\line( 5, 2){0.400}} % Right-angle symbol
+\put( 2.73, 1.67){\line(-1, 3){0.125}} % Right-angle symbol
+\put( 3.15, 0.78){$\theta$} % Angle symbol
+\put( 1.80, 0.60){$\frac{\Delta a_2}{w}$} % Hypotenuse symbol
+\put( 3.35, 1.40){$\frac{\Delta a_1}{w}$} % Adjacent symbol
+\end{picture}
+
+The prism has width $w$.
+One face of the prism is the surface $\Delta a_1$.
+Another face is the surface $\Delta a_2$.
+A third face is a right triangle with angle $\theta$,
+a hypotenuse $\Delta a_2/w$, and adjacent side $\Delta a_1/w$.
+The cosine of $\theta$ is defined as the length of the adjacent side
+divided by the length of the hypotenuse.
+\begin{eqnarray*}
+  \cos \theta &=& \frac{\Delta a_1/w}{\Delta a_2/w} \quad = \quad \frac{\Delta a_1}{\Delta a_2} \\
+  \Delta a_1 &=& \Delta a_2 \cos \theta
+\end{eqnarray*}
+
+Rearrange to get the surface areas in the denominators.
+\begin{equation*}
+  \frac{1}{\Delta a_2} \quad = \quad \frac{1}{\Delta a_1} \cos \theta
+\end{equation*}
+
+Again we ask, what is the heat flow through $\Delta a_2$?
+It is $\Delta J / \Delta a_2$.
+And the magnitude of $\bv{h}$ is $\Delta J / \Delta a_1$.
+Now we multiply both sides of the equation above by $\Delta J$.
+This is the same as the scalar product of $\bv{h}$ and $\bv{n}$.
+\begin{equation}
+  \frac{\Delta J}{\Delta a_2} \quad = \quad
+  \frac{\Delta J}{\Delta a_1} \cos \theta \quad = \quad
+  \bv{h} \cdot \bv{n}
+\end{equation}
+
+The heat flow through $\Delta a_2$ is the scalar product
+of the heat flow vector $\bv{h}$ and the normal unit vector $\bv{n}$.
+
+
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Eq. (2.10)
+Figure 2-4 in the text shows two small surface areas $\Delta a_1$ and $\Delta a_2$.
+Vector $\bv{h}$ is normal to $\Delta a_1$ and vector $\bv{n}$ is normal to $\Delta a_2$.
+These two vectors are separated by an angle of $\theta$.
+Figure 2-4 shows the surfaces areas as rectangles with the same width.
+Let this width be $w$.
+Therefore, we can compute the area of each rectangle.
+\begin{eqnarray*}
+  \Delta a_1 &=& w \cdot \frac{\Delta a_1}{w} \\
+  \Delta a_2 &=& w \cdot \frac{\Delta a_2}{w} \\
+\end{eqnarray*}
+
+%% Eq. (2.10), continued.
+We can construct a right triangle with the lengths of the rectangles.
+The figure below shows a right triangle with angle $\theta$,
+adjacent side $\frac{\Delta a_1}{w}$, and hypotenuse $\frac{\Delta a_2}{w}$.
+The adjacent side represents the length of the rectangle for area $\Delta a_1$.
+The hypotenuse represents the length of the rectangle for area $\Delta a_2$.
+
+%% Extra figure, supports Fig. 2-4.
+%% Frame is 5.00 cm wide and 3.00 cm tall.
+%% The bottom left-hand corner is at (-3.50, 0.00).
+\setlength{\unitlength}{1cm}
+\begin{picture}(5.00,3.00)(-3.50, 0.00)
+%% Draw the frame boundries.
+%% (These may be commented out.)
+% \put( 0.00, 3.00){\line( 1, 0){4.75}} % North boundry
+% \put( 0.00, 0.00){\line( 1, 0){4.75}} % South boundry
+% \put( 4.75, 0.00){\line( 0, 1){3.00}} % West boundry
+% \put( 0.00, 0.00){\line( 0, 1){3.00}} % West boundry
+%% Draw the triangle.
+\put( 1.00, 1.40){\line( 3,-1){2.56}} % Hypotenuse
+\put( 1.00, 1.40){\line( 5, 2){2.00}} % Opposite
+\put( 3.00, 2.20){\line( 1,-3){0.55}} % Adjacent
+%% Draw the various symbols.
+\put( 2.73, 1.67){\line( 5, 2){0.400}} % Right-angle symbol
+\put( 2.73, 1.67){\line(-1, 3){0.125}} % Right-angle symbol
+\put( 3.15, 0.78){$\theta$} % Angle symbol
+\put( 1.80, 0.60){$\frac{\Delta a_2}{w}$} % Hypotenuse symbol
+\put( 3.35, 1.40){$\frac{\Delta a_1}{w}$} % Adjacent symbol
+\end{picture}
+
+%% Eq. (2.10), continued.
+The cosine of angle $\theta$ is the length of the adjacent side $\Delta a_1 / w$
+divided by the length of the hypotenuse $\Delta a_2 / w$.
+We cancel the two $w$ terms and multiply both sides by $\Delta a_2$.
+\begin{equation*}
+  \Delta a_1 = \Delta a_2 \cos \theta
+\end{equation*}
+
+%% Eq. (2.10), continued.
+The same amount of thermal energy $\Delta J$ passes through surface 
+$\Delta a_2$ as passes through $\Delta a_1$.
+We divide $\Delta J$ by $\Delta a_1$ on one side and 
+by $\Delta a_2 \cos \theta$ on the other, then rearrange.
+\begin{equation*}
+  \frac{\Delta J}{\Delta a_2} = \frac{\Delta J}{\Delta a_1} \cos \theta
+\end{equation*}
+
+%% Eq. (2.10), continued.
+The magnitude of vector $\bv{h}$ is, by definition, $h = \Delta J / \Delta a_1$.
+The unit vector $\bv{n}$ is normal to the surface $\Delta a_2$
+and its magnitude is $n = 1$.
+The scalar product of the two vectors is
+\begin{equation*}
+  \bv{h} \cdot \bv{n} = h n \cos \theta = \frac{\Delta J}{\Delta a_1} \cos \theta
+\end{equation*}
+
+%% full presentation of Eq. (2.10)
+To summarize, the heat flow --- per unit time and per unit area through surface area $\Delta a_2$ 
+with unit normal $\bv{n}$ --- is given by the scalar product $\bv{h} \cdot \bv{n}$ ---
+where $\bv{h}$ represents the magnitude and directon of the heat flow that is
+normal to surface area $\Delta a_1$.
+\begin{equation}
+  \frac{\Delta J}{\Delta a_2} = \frac{\Delta J}{\Delta a_1} \cos \theta = \bv{h} \cdot \bv{n}
+\end{equation}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+

@@ -1,0 +1,81 @@
+%% 3-3.tex
+\section{The flux from a cube; Gauss' theorem}
+
+We shall develop an interesting identity called Gauss' Theorem.
+It expresses the flux of a vector field $\bv{C}$ through a surface $S$.
+To begin, we describe the flux through each face of a cube and then sum the six fluxes.
+
+\newpage
+Consider the cube in Figure 3-5.
+The six faces are marked 1 through 6.
+Face 1 has an area $\Delta y \Delta z$.
+Since the cube is very small, we'll assume that the $x$-component of $\bv{C}$
+is the same through each point in face 1. We call it $-C_x(1)$.
+We want the \emph{outward} value of the $x$-component, 
+but since the $x$-component of $\bv{C}$ points \emph{into} the cube,
+we need the negative sign.
+We follow this logic for each of the six faces.
+\begin{eqnarray*}
+  \mathrm{Flux\ out\ of\ 1\ } &=&  - C_x(1) \Delta y \Delta z \\
+  \mathrm{Flux\ out\ of\ 2\ } &=&  + C_x(2) \Delta y \Delta z \\
+  \mathrm{Flux\ out\ of\ 3\ } &=&  - C_y(3) \Delta x \Delta z \\
+  \mathrm{Flux\ out\ of\ 4\ } &=&  + C_y(4) \Delta x \Delta z \\
+  \mathrm{Flux\ out\ of\ 5\ } &=&  - C_z(5) \Delta x \Delta y \\
+  \mathrm{Flux\ out\ of\ 6\ } &=&  + C_z(6) \Delta x \Delta y
+\end{eqnarray*}
+
+Now the total flux out of the cube is simply the sum of these six fluxes.
+We group similar terms to get a sum of three differences.
+\begin{eqnarray*}
+  \mathrm{Total\ flux\ } &=&
+  \big[ C_x(2) - C_x(1) \big] \Delta y \Delta z + \\
+  & & \big[ C_y(4) - C_y(3) \big] \Delta x \Delta z + \\
+  & & \big[ C_x(6) - C_x(5) \big] \Delta x \Delta y
+\end{eqnarray*}
+
+Since the cube is very small, we can replace the differences with very small numbers.
+For example, the difference between the two components $C_x(1)$ and $C_x(2)$ is 
+the rate of change of $\bv{C}$ in the $x$-direction, which is $\partial C_x / \partial x$, 
+times the distance between face 1 and face 2, which is $\Delta x$.
+We follow this logic for all three differences.
+\begin{eqnarray*}
+  C_x(2) - C_x(1) &=& \dfdx{C_x}{x} \Delta x \\
+  C_y(4) - C_y(3) &=& \dfdx{C_y}{y} \Delta y \\
+  C_z(6) - C_z(5) &=& \dfdx{C_z}{z} \Delta z
+\end{eqnarray*}
+
+Now we take the total flux equation and 
+replace the three differences with the three derivatives and group them together.
+The sum of the derivatives is the divergence $(\grad \cdot \bv{C})$.
+And the product of the deltas is $\Delta V$.
+\begin{eqnarray*}
+  \mathrm{Total\ flux\ } &=&
+  \left( \dfdx{C_x}{x} \Delta x \right) \Delta y \Delta z +
+  \left( \dfdx{C_y}{y} \Delta y \right) \Delta x \Delta z +
+  \left( \dfdx{C_z}{z} \Delta z \right) \Delta x \Delta y \\
+  &=& \Bigg( \dfdx{C_x}{x} + \dfdx{C_y}{y} + \dfdx{C_z}{z} \Bigg)
+  \Delta x \Delta y \Delta z \\
+  &=& \Big( \grad \cdot \bv{C} \Big) \Delta V
+\end{eqnarray*}
+
+Now we can write an identity for the flux from a cube.
+We can say that \emph{for an infinitesimal cube}
+%% Eq. (3.17)
+\begin{equation}
+  \int\limits_{\mathrm{cube}}
+  \bv{C} \cdot \bv{n} \; da = \Big( \grad \cdot \bv{C} \Big) \Delta V
+\end{equation}
+
+Now we apply the fact that we proved in Section 3-2.
+We subdivide some volume $V$ into an infinite number of infinitesimal cubes
+and compute the flux of each.
+The flux of $\bv{C}$ across the surface $S$
+is the divergence of $\bv{C}$ through the entire volume $V$.
+This identity works for \emph{any} closed surface $S$ and volume $V$.
+
+%% Eq. (3.18)
+\hspace{2em} \textsc{Gauss' Theorem:}
+\begin{equation}
+  \int_S \bv{C} \cdot \bv{n} \; da = \int_V \grad \cdot \bv{C} \; dV
+\end{equation}
+

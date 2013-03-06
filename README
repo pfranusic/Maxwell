@@ -1,0 +1,10 @@
+# max/README
+
+This is a set of notes taken from a physics textbook.
+The textbook is Volume II of The Feynman Lectures on Physics.
+This volume covers Maxwell's equations.
+The notes are written using LaTeX.
+To generate a PDF, use this command:
+
+  $ pdflatex max.tex
+

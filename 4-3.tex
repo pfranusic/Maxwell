@@ -1,0 +1,121 @@
+%% 4-3.tex
+\section{Electric potential}
+
+This section develops the idea of electric potential $/phi$.
+We begin by specifying the work done to move a charge some finite distance.
+Figure 4-2 shows a charge $q$ moving on a path from point $a$ to point $b$.
+There is some distribution of charge, so there's an electric field.
+At each point along the path, the charge feels an electrical force $\bv{F}$,
+and the charge makes an infinitesimal move in the direction of $d\bv{s}$.
+The work $W$ done \emph{against} the electrical forces to carry $q$ along this path
+is the \emph{negative} of the component of the electrical force in the 
+direction of motion, integrated along the path from $a$ to $b$.
+%% unnumbered equation before (4.19)
+\begin{equation*}
+  W = - \int_a^b \bv{F} \cdot d\bv{s}
+\end{equation*}
+
+We divide both sides by $q$ to get the work done to carry \emph{one unit} of charge.
+Since $\bv{F} /q = \bv{E}$ we have
+%% Eq. (4.19)
+\begin{equation}
+  W \mathrm{(unit)} = - \int_a^b \bv{E} \cdot d\bv{s}
+\end{equation}
+
+In this next equation, there are three expressions: left, middle, right.
+The left expression is the right side of Eq. (4.19).
+I know how to get the right expression from the middle expresssion.
+\textcolor{red}{But how do we get the middle expression from the left expression?}
+I think we need to refer to Coulomb's law as shown in Eq. (4.9).
+Another thing: \textcolor{red}{Why is no work done from $a$ at $a'$?}
+The text explains that the field is at right angle to the direction of motion.
+But I need something a little more substantial.
+%% Eq. (4.20)
+\begin{equation}
+  - \int_a^b \bv{E} \cdot d\bv{s}
+  = \frac{q}{4\pi\epsilon_0} \int_{a'}^b \frac{dr}{r^2}
+  = - \frac{q}{4\pi\epsilon_0} \Big(\frac{1}{r_a} - \frac{1}{r_b}\Big)
+\end{equation}
+
+The idea in Figure 4-3 is that no matter \emph{which} path we choose,
+the work to get from $a$ to $b$ will always be the same.
+%% unnumbered equation before (4.21)
+\begin{equation*}
+  \left. \begin{array}{l}
+    W \mathrm{(unit)} \\
+    a \to b
+  \end{array} \right\}
+  = - \int_a^b \bv{E} \cdot d\bv{s}
+\end{equation*}
+
+Now we introduce the electric potential $\phi$.
+Figure 4-4 shows the two points $a$ and $b$ plus some arbitrary reference point $P_0$.
+We define $\phi(a)$ as the work required to move a charge from $P_0$ to $a$,
+and $\phi(b)$ as the work required to move a charge from $P_0$ to $b$.
+Now we want the work required to move the charge from $a$ to $P_0$ 
+and then from $P_0$ to $b$. This is $-\phi(a)+\phi(b)$.
+%% Eq. (4.21)
+\begin{equation}
+  - \int_a^b \bv{E} \cdot d\bv{s} = \phi(b) - \phi(a)
+\end{equation}
+
+Note that this looks a lot like the Fundamental Theorem of Calculus, 
+except for the minus sign.  So now, given some arbitrary reference point $P_0$, 
+we can define the electrostatic potential function for any point $P$, where $\phi(P_0)=0$.
+It is a scalar function of $P=(x,y,z)$.
+%% Eq. (4.22)
+
+\hspace{2em}\emph{Electrostatic potential:}
+\begin{equation}
+  \phi(P) = - \int_{P_0}^P \bv{E} \cdot d\bv{s}
+\end{equation}
+
+We replace the left side with $\phi(x,y,z)$.
+We replace the right side with the right-most expression from Eq. (4.20),
+except that we replace $r_b$ with $r$, and
+$r_a$ with $r_0$, the distance of q from $P_0$.
+\begin{equation*}
+  \phi(x,y,z) = - \frac{q}{4\pi\epsilon_0} \bigg(\frac{1}{r_0}-\frac{1}{r}\bigg)
+\end{equation*}
+
+We'd like to get rid of the $1/r_0$ term.  We can do this if
+we put the reference point $P_0$ \emph{really far away} and then take the limit
+as $r_0$ approaches infinity.
+\begin{equation*}
+  \lim_{r_0 \to \infty} -\frac{q}{4\pi\epsilon_0} \bigg(\frac{1}{r_0}-\frac{1}{r}\bigg)
+  = \frac{q}{4\pi\epsilon_0} \; \frac{1}{r}
+\end{equation*}
+
+With the reference point at infinity, 
+the $1/r_0$ term becomes a 0, the two minus signs cancel,
+and we get a nice clean equation for the electrostatic potential
+at any point $(x,y,z)$ where a single charge $q$ is at the orgin $(0,0,0)$.
+\textcolor{red}{But what is $r$? Is it $(x^2 + y^2 + z^2)^{1/2}$?}
+%% Eq. (4.23)
+\begin{equation}
+  \phi(x,y,z) = \frac{q}{4\pi\epsilon_0} \; \frac{1}{r}
+\end{equation}
+
+\textcolor{red}{
+The last two equations in this section are given without derivation.
+Even though they seem to make sense, this still bothers me.
+I'd like to see them derived.}
+
+This equation gives the potential at some point (1) in an electric field
+caused by a group of charges.
+It looks a lot like Eq. (4.13), except it's missing an $\bv{e_{1j}}/r_{1j}$ term.
+\textcolor{red}{So how do we get from Eq. (4.13) to Eq. (4.24)?}
+%% Eq. (4.24)
+\begin{equation}
+  \phi(1) = \sum_j \frac{1}{4\pi\epsilon_0} \; \frac{q_j}{r_{1j}}
+\end{equation}
+
+This equation gives the potential at some point (1) in an electric field
+caused by a distribution of charges.
+It looks a lot like Eq. (4.16), except it's missing an $\bv{e_{12}}/r_{12}$ term.
+\textcolor{red}{So how do we get from Eq. (4.16) to Eq. (4.25)?}
+%% Eq. (4.25)
+\begin{equation}
+  \phi(1) = \frac{1}{4\pi\epsilon_0} \int  \frac{\rho(2)\;dV_2}{r_{12}}
+\end{equation}
+

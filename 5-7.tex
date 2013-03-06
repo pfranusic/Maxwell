@@ -1,0 +1,38 @@
+%% 5-7.tex
+\section{A sphere of charge; a spherical shell}
+
+We can use Gauss' law to find the electric field inside a sphere of uniform charge.
+Figure 5-8 shows a sphere with radius $R$ and uniform charge density,
+and $\rho$ is the charge per unit volume.
+
+Using arguments of symmetry,
+we assume the electric field is radial at every point inside the sphere.
+We also assume the electric field has the same magnitude at all points
+equidistant from the center of the sphere.
+
+The Gaussian surface is a smaller concentric sphere with radius $r$.
+We wish to know the electric field magnitude $E$ outside the smaller sphere.
+The flux out of the smaller sphere is simply it's surface area
+times the field magnitude, or $4\pi r^2 E$.
+The charge inside the smaller sphere is simply it's volume times
+the charge per unit volume, or $\frac{4}{3} \pi r^3 \rho$.
+Gauss's law says that the flux out of the smaller sphere is equal to
+the charge inside, divided by $\epsilon_0$.
+%% nonumber and Eq. (5.7)
+\begin{equation*}
+  4\pi r^2 E  = \frac{\frac{4}{3} \pi r^3 \rho}{\epsilon_0}
+\end{equation*}
+
+Dividing both sides by $4 \pi r^2$ we get
+\begin{equation}
+  E = \frac{\rho r}{3 \epsilon_0} \qquad (r < R)
+\end{equation}
+
+Now we consider a thin spherical shell of charge.
+Using arguments of symmetry,
+we assume the electric field is radial at every point inside and outside the shell.
+We also assume the electric field has the same magnitude at all points 
+equidistant from the center of the shell.
+The field outside the shell is like a point charge.
+The field inside the shell is zero.
+

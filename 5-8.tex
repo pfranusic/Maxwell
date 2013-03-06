@@ -1,0 +1,70 @@
+%% 5-8.tex
+\section{Is the field of a point charge exactly $\boldsymbol{1/r^2}$?}
+
+``Gauss' law is true only because the coulomb force
+depends exactly on the square of the distance.''
+Figure 5-9 shows a large circle that represents a spherical shell of charge.
+A point $P$ is somewhere inside the sphere, not necessarily at the center.
+Two right circular cones share the vertex $P$.
+Each cone intersects the sphere where it describes a circle.
+The areas of the circles are $\Delta a_1$ and $\Delta a_2$.
+
+The two cones are symmetrical, such that every line that intersects one circle 
+and the vertex $P$, intersects the other circle.
+Two right triangles (not shown) may be defined, one for each cone.
+Each triangle has vertices $P$, the center of a circle, and the edge of a circle.
+Let $r_1$ and $r_2$ be the lengths of the hypotenuses.
+Let $b_1$ and $b_2$ (not shown) be the lengths of the radii of the two circles.
+Let $\theta$ be the half angle of the cones at the vertex $P$.
+We then have $b_1 = r_1 \sin \theta$ and $b_2 =r_2 \sin \theta$,
+and the areas of the two circles are
+\begin{eqnarray*}
+  \Delta a_1 &=& \pi (r_1 \sin \theta)^2 \\
+  \Delta a_2 &=& \pi (r_2 \sin \theta)^2
+\end{eqnarray*}
+The ratio of the two areas, after cancellation of $\pi \sin^2 \theta$ 
+in the numerator and the denominator, is equal to the ratio of the two square hypotenuses.
+%% nonumber
+\begin{equation*}
+  \frac{\Delta a_2}{\Delta a_1} = \frac{r^2_2}{r^2_1}
+\end{equation*}
+
+The charge on the sphere is uniformly distributed.
+Let $\sigma$ be the charge per unit area.
+The charge inside the first circle is $q_1 = \sigma \Delta a_1$.
+The charge inside the second circle is $q_2 = \sigma \Delta a_2$.
+After cancellation of $\sigma$, the ratio of the two charges
+is equal to the ratio of the two areas.
+%% nonumber
+\begin{equation*}
+  \frac{q_2}{q_1} = \frac{\Delta a_2}{\Delta a_1} 
+\end{equation*}
+
+When we apply the transitive property of equality to the two previous equations,
+we see that the ratio of the two charges is equal to the ratio of the two square hypotenuses,
+or $q_2/q_1 = r_2^2 / r_1^2$. Rearranging, we get
+\begin{equation*}
+  \frac{q_2/r_2^2}{q_1/r_1^2} = 1
+\end{equation*}
+
+Coulomb's law says that for some point $P$ and some static charge $q$
+separated by some distance $r$, the magnitude of the electric field at $P$ 
+is given by the equation $E = -q / 4\pi\epsilon_0 r^2$.
+Let $E_1$ and $E_2$ be the magnitudes of the two fields produced by $q_1$ and $q_2$
+at the common vertex $P$ in Figure 5-9.
+\begin{equation*}
+  E_1 = \frac{-q_1}{4 \pi \epsilon_0 r_1^2} \qquad
+  E_2 = \frac{-q_2}{4 \pi \epsilon_0 r_2^2}
+\end{equation*}
+
+After cancellation of $-4\pi\epsilon_0$, the ratio of the two magnitudes is
+%% nonumber
+\begin{equation*}
+  \frac{E_2}{E_1} = \frac{q_2/r_2^2}{q_1/r_1^2}
+\end{equation*}
+
+Again, by the transitive property of equality, we have $E_2/E_1 = 1$.
+This means that $E_2 = E_1$. In other words, these two fields cancel each other out.
+We can then extend this argument for the entire surface of the sphere
+to demonstrate that the total field at $P$ is zero.
+

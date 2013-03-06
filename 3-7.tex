@@ -1,0 +1,36 @@
+%% 3-7.tex
+\section{Curl-free and divergence-free fields}
+
+Consider Figure 3-13 with small loop $\Gamma$ and large surface $S$.
+We now shrink the loop to nothing and create a \emph{closed surface} ---
+a surface with no boundry.
+According to Stokes' theorem, if the circulation around a loop $\Gamma$ is zero,
+then the surface integral of $(\grad \times \bv{C})_n$ must also be zero.
+So we have a new theorem for the special case where $S$ is a closed surface.
+%% Eq. (3.39)
+\begin{equation}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{any\ closed}}{\mathrm{surface}}}
+  (\grad \times \bv{C})_n \; da = 0
+\end{equation}
+
+Remember that $(\grad \times \bv{C})_n$ is the same as $(\grad \times \bv{C}) \cdot \bv{n}$.
+Now we take Gauss' theorem and replace each $\bv{C}$ with $(\grad \times \bv{C})$.
+We also replace $(\grad \times \bv{C}) \cdot \bv{n}$ on the left side with 
+$(\grad \times \bv{C})_n$. This gives us
+%% Eq. (3.40)
+\begin{equation}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{closed}}{\mathrm{surface}}}
+  (\grad \times \bv{C})_n \; da =
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{volume}}{\mathrm{inside}}}
+  \grad \cdot (\grad \times \bv{C}) \; dV
+\end{equation}
+
+The expression on the left side is the same as in equation (3.39), which is zero.
+Therefore the expression on the right side must also be zero.
+The integrand $\grad \cdot (\grad \times \bv{C})$ is 0, just as equation (2.49) states.
+%% Eq. (3.41)
+\begin{equation}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{any}}{\mathrm{volume}}}
+  \grad \cdot (\grad \times \bv{C}) \; dV = 0
+\end{equation}
+

@@ -1,0 +1,78 @@
+%% 4-5.tex
+\section{The flux of $\bv{E}$}
+
+What is the flux of $\bv{E}$ out of an arbitrary closed surface
+in the neighborhood of a point charge?
+We first take the simple surface shown in Figure 4-5 where the charge lies on the outside.
+This surface has four radial faces which are parallel to $\bv{E}$.
+It also has two spherical faces $a$ and $b$ which are normal to $\bv{E}$.
+The area of $a$ is less than the area of $b$ by a factor of $r^2$.
+The magnitude $E_a$ is greater than magnitude $E_b$ by a factor of $1/r^2$.
+Therefore the flux of $\bv{E}$ into face $a$ is cancelled by the flux out of face $b$.
+\textcolor{red}{The following equation doesn't quite correlate with the previous text.}
+%% Eq. (4.30)
+\begin{equation}
+  \int_S E_n \; da = 0
+\end{equation}
+
+Next we take the surface shown in Figure 4-6.
+It is called an \emph{infinitesimal truncated cone}.
+It's similar to the previous surface in that it has four radial faces.
+But it's different in two ways. First, it is infinitesimally narrow. Second, 
+it has two flat tilted faces instead of two spherical faces. That is, each face 
+is perfectly flat, and each face is tilted from the normal by some angle $\theta$.
+The area of each face, $\Delta a$, increases by a factor of $1/\cos\theta$ as $\theta$ is increased.
+And the magnitude of the normal component, $E_n$, decreases by a factor of $\cos\theta$
+as $\theta$ is increased.
+Therefore the product $E_n \Delta a$ is the same regardless of the angle $\theta$.
+And the flux of $\bv{E}$ out of this surface is zero.
+
+Of course, \emph{any} surface can be subdivided into an infinite number of
+infinitesimal truncated cones.
+Figure 4-7 shows an arbitrary cylindrical surface with a few truncated cones.
+Now we can say that the total flux of $\bv{E}$ out of \emph{any} surface $S$ is zero
+for the field of a point charge that lies outside $S$.
+
+But what if the point charge lies inside $S$?
+How do we compute the flux of $\bv{E}$ through $S$?
+We could try using pairs of truncated cones as shown in Figure 4-8.
+But the two partial fluxes will add rather than cancel.
+The flux out of a surface that \emph{surrounds} a charge is \emph{not} zero.
+
+We use a ``trick'' to compute the flux of $\bv{E}$ 
+out of a surface $S$ that surrounds a point charge.
+We \emph{isolate} the charge by surrounding it with another surface $S'$
+that is much smaller and also spherical.
+So now we have a volume bounded by the two surfaces $S$ and $S'$.
+The charge is outside this volume, so the flux of $\bv{E}$ out of this volume is zero.
+
+But what is the flux of $\bv{E}$ through surface $S'$?
+The radius of our little sphere is $r$, and from Equation (4.11),
+we have the value of $\bv{E}$ everywhere on $S'$ and normal to $S'$.
+%% nonumber
+\begin{equation*}
+  \frac{1}{4\pi\epsilon_0} \; \frac{q}{r^2}
+\end{equation*}
+
+To get the total flux of $\bv{E}$ through the entire surface $S'$
+we simply multiply by the surface area of $S'$.
+The $r^2$ terms cancel, and we get an expression that is independent of the radius.
+%% Eq. (4.31)
+\begin{equation}
+  \mathrm{Flux\ through\ } S' =
+  \left( \frac{1}{4\pi\epsilon_0} \; \frac{q}{r^2} \right)
+  \left( 4 \pi r^2 \right) = \frac{q}{\epsilon_0}
+\end{equation}
+
+So we conclude that the flux of $\bv{E}$ through a surface $S$
+depends on the location of the point charge, 
+whether it is outside of $S$ or inside of $S$.
+%% Eq. (4.32)
+\begin{equation}
+  \int\limits_{\mathrm{any\ surface\ }S} E_n \; da = 
+  \left\{ \begin{array}{c}
+    0 \qquad \mathrm{if\ } q \mathrm{\ is\ outside\ of\ } S \\
+    q/\epsilon_0 \qquad \mathrm{if\ } q \mathrm{\ is\ inside\ of\ } S \\
+  \end{array} \right.
+\end{equation}
+

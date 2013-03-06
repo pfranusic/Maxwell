@@ -1,0 +1,59 @@
+%% 6-8.tex
+\section{A point charge near a conducting plane}
+
+%% Eq. (6.28)
+\begin{equation}
+  E_{n+} = - \frac{1}{4\pi\epsilon_0} \frac{aq}{(a^2 + \rho^2)^{3/2}}
+\end{equation}
+
+%% Eq. (6.29)
+\begin{equation}
+  \sigma(\rho) = \epsilon_0 E (\rho) = - \frac{2aq}{4 \pi (a^2 + \rho^2)^{3/2}}
+\end{equation}
+
+%% Eq. (6.30)
+\begin{equation}
+  F = \frac{1}{4\pi\epsilon_0} \frac{q^2}{(2a)^2}
+\end{equation}
+
+
+
+Given the situation shown in Figure 6-10,
+we would like to know how the negative charges are distributed on the conducting plate.
+The charge density $\sigma$ is a function of the distance $\rho$ 
+between some point P and the point directly under the positive charge.
+We wish to know how the charge density $\sigma(\rho)$ equation (6.29) was derived.
+From equation (6.3) we have
+\begin{eqnarray}
+  \boldsymbol{E} &=& -\nabla\phi \nonumber\\
+  &=& \bigg( -\dfdx{\phi}{x} , -\dfdx{\phi}{y} , -\dfdx{\phi}{z} \bigg) \nonumber
+\end{eqnarray}
+
+In the figure, we will assume that the positive point charge and the negative image charge
+are both sitting on the $x$-axis, and that the right side of the conducting plate is 
+sitting on the $yz$-plane.  Point P has coordinates (0,y,z).
+We don't know what the $y$ and $z$ coordinates are, but we do know that $y^2+z^2=\rho^2$.
+Therefore, the distance $r$ from point P to the positive charge is $\sqrt{x^2+\rho^2}$.
+So, from equation (4.23), we have
+\begin{eqnarray}
+  \phi(x,y,z) &=& \frac{q}{4\pi\epsilon_0} \frac{1}{r} \nonumber\\
+  &=& \frac{q}{4\pi\epsilon_0} \frac{1}{\sqrt{x^2+\rho^2}} \nonumber
+\end{eqnarray}
+
+In equation (6.28), $E_{n+}$ is the component normal to the surface of the field 
+from the \emph{positive} charge.
+This component must be one of the partial derivatives of $\phi$.  But which one?
+If we let $u=x^2+\rho^2$, then it appears that
+\begin{eqnarray}
+  E_{n+} &=& -\dfdx{\phi}{x} \nonumber\\
+  &=& -\dfdx{}{x} \frac{q}{4\pi\epsilon_0} \frac{1}{\sqrt{x^2+\rho^2}} \nonumber\\
+  &=& -\frac{q}{4\pi\epsilon_0} \dfdx{}{u} (u^{-1/2}) \dfdx{}{x} (x^2+\rho^2) \nonumber\\
+  &=& -\frac{q}{4\pi\epsilon_0} \bigg(-\frac{1}{2}u^{-3/2}\bigg)\bigg(2x\bigg) \nonumber\\
+  &=& +\frac{1}{4\pi\epsilon_0} \frac{xq}{(x^2+\rho^2)^{3/2}} \nonumber
+\end{eqnarray}
+
+\textcolor{red}{
+If we set $x=a$, then we have equation (6.28), except for the sign.
+So what did I do wrong?
+}
+

@@ -1,0 +1,61 @@
+%% 5-2.tex
+\section{Equilibrium in an electrostatic field}
+
+This section explores the idea of equilibrium in several different situations
+and demonstrates that there are \emph{no} positions of stable equilibrium
+within \emph{any} electrostatic field. (We disregard the positions of point charges.)
+
+The first situation is a plane in free space.
+The plane contains three negative charges which are equidistant from each other.
+I.e., the three negative charges are at the corners of an equilateral triangle.
+Now we place a positive charge at the exact center of the triangle.
+It does not move because the force is zero
+\emph{at this singular point in the middle of the triangle.}
+But this isn't a position of stable equilibrium.
+If we nudge the positive charge ever so slightly, it won't return to the center.
+
+In order for a charge to be in stable equilibrium at some position $P_0$ 
+within an electrostatic field, there are two conditions that would have to be met.
+The first condition is that the field at position $P_0$ must be zero.
+The second condition is that \emph{all} of the electric field vectors at nearby positions
+must be aimed inward towards $P_0$. But this condition violates Gauss' law,
+and the next situation demonstrates why.
+
+Figure 5-1 shows a cutaway of an imaginary spherical surface that surrounds $P_0$.
+Per the second condition of equilibrium, all of the nearby vectors are aimed at $P_0$.
+This means that the surface integral would be some negative number.
+But if there is no charge at $P_0$, the surface integral would have to be zero, by Gauss' law.
+We have a contradiction here, and since Gauss' law is inviolable, an imaginary surface
+with vectors aimed inward must be an impossibility. The second condition is impossible.
+
+\textcolor{red}{The next situation is two equal charges fixed on a rod.
+But I'm having trouble visualizing the force $\bv{F}$ on the rod in any position.
+And which argument is referenced by ``following the argument used above\ldots''?}
+The Lorentz force is given in Eq. (1.1):
+\begin{equation*}
+  \bv{F} = q(\bv{E} + \bv{v} \times \bv{B})
+\end{equation*}
+
+The Lorentz force for static charges is simply $\bv{F} = q\bv{E}$
+because the velocity vector $\bv{v}$ is $(0,0,0)$ and the cross-product
+cancels any effects from the magnetic field vector $\bv{B}$.
+The superposition principle says that we can add the Lorentz force
+of each charge to get the total force on the rod.
+%% Eq. (5.1) and nonumber
+\begin{equation}
+  \bv{F} = q_1 \bv{E}_1 + q_2 \bv{E}_2
+\end{equation}
+
+Now we differentiate both sides and rearrange the right side.
+This gives the separate factors $(\grad \cdot \bv{E}_1)$ and $(\grad \cdot \bv{E}_2)$.
+\begin{equation*}
+  \grad \cdot \bv{F} =
+  q_1 \left( \grad \cdot \bv{E}_1 \right) +
+  q_2 \left( \grad \cdot \bv{E}_2 \right) \nonumber
+\end{equation*}
+
+\textcolor{red}{I don't understand why ``both $\grad \cdot \bv{E}_1$ and 
+$\grad \cdot \bv{E}_2$ are zero.''}
+It follows that the divergence $\grad \cdot \bv{F}$ is therefore zero.
+But the argument of Figure 5-1 demonstrates that the divergence must be negative
+for stable equilibrium to exist.

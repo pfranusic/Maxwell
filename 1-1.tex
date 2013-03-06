@@ -1,0 +1,53 @@
+%% 1-1.tex
+\section{Electrical forces}
+
+Consider a force like gravitation which varies 
+predominantly inversely as the square of the distance, but which is 
+about a \emph{billion-billion-billion-billion} times stronger.
+And with another difference.  There are two kinds of \emph{charges},
+which we call positive and negative, where like charges repel and unlike charges attract.
+There is such a force: the electrical force.
+Like the gravitational force, the electrical force $F$ decreases inversely
+as the square of the distance $r$ between two charges $q_1$ and $q_2$.
+This relationship is called Coulomb's law.
+\begin{equation*}
+  F = \frac{1}{4 \pi \epsilon_0} \frac{q_1 q_2}{r^2}
+\end{equation*}
+
+But Coulomb's law is not precisely true when charges are moving.
+The electrical forces depend also on the motions of the charges in a complicated way.
+One part of the force between moving charges we call the \emph{magnetic} force,
+which is really one aspect of an electrical effect.
+This is why we call the subject ``electromagnetism.''
+
+We can write the electromagnetic force on a charge $q$ in a simple way.
+We use two vectors, $\bv{E}$ and $\bv{B}$, 
+where $\bv{E}$ is the \emph{electric field} at the location of $q$,
+and $\bv{B}$ is the \emph{magnetic field} at the location of $q$.
+The electrical forces from all the other charges in the universe
+can be summarized by giving just these two vectors.
+The Lorentz force $\bv{F}$ on a charge $q$ moving with a velocity $\bv{v}$ is
+%% Eq. (1.1)
+\begin{equation}
+  \bv{F} = q(\bv{E} + \bv{v} \times \bv{B})
+\end{equation}
+
+\newpage
+
+From mechanics, we know how to calculate the motion of a particle, i.e., $\bv{F} = m \bv{a}$.
+The equation for the Lorentz force can be combined with the equation of motion so that
+if $\bv{E}$ and $\bv{B}$ are given, we can find the motions.
+\begin{equation}
+  \frac{d}{dt} \Bigg[ \frac{m \bv{v}}{\sqrt{1 - v^2 / c^2}} \Bigg]
+  = q(\bv{E} + \bv{v} \times \bv{B})
+\end{equation}
+
+An important simplifying principle is the \emph{principle of superposition} of fields.
+If one set of charges produces field $\bv{E}_1$ and another set produces field $\bv{E}_2$
+then the superposition $\bv{E}$ of these two fields is simply their sum.
+The principle of superposition holds for both electric fields and magnetic fields.
+\begin{eqnarray}
+  \bv{E} &=& \bv{E}_1 + \bv{E}_2 \\
+  \bv{B} &=& \bv{B}_1 + \bv{B}_2 \nonumber
+\end{eqnarray}
+

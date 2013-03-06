@@ -1,0 +1,121 @@
+%% 3-4.tex
+\section{Heat conduction; the diffusion equation}
+
+We develop the \emph{heat diffusion equation}.
+It is a differential equation in $x, y, z,$ and $t$ for temperature $T$.
+We begin with an equation for the ``heat out'' of a cube that is cooling off.
+We take equation (3.17) and replace vector $\bv{C}$ with heat flux vector $\bv{h}$.
+%% Eq. (3.19)
+\begin{equation}
+  \mathrm{Heat\ out} = \int\limits_{\mathrm{cube}}
+  \bv{h} \cdot \bv{n} \; da = \Big( \grad \cdot \bv{h} \Big) \Delta V
+\end{equation}
+
+Next, we write an equation for the ``heat lost'' from the inside of the cube.
+There are neither heat sources nor heat sinks inside the cube.
+If the heat per unit volume is $q$ and the volume of the cube is $\Delta V$,
+then the heat lost is simply the time derivative of the total heat $q\;\Delta V$.
+%% Eq. (3.20)
+\begin{equation}
+  \mathrm{Heat\ lost} = - \frac{d}{dt} (q \; \Delta V) = - \frac{dq}{dt} \; \Delta V
+\end{equation}
+
+The conservation of energy law tells us that the heat lost from inside the cube
+is exactly the same as the heat out of the cube.
+This gives us a \emph{differential} form that appears often in physics.
+%% Eq. (3.21)
+\begin{eqnarray}
+  \mathrm{Heat\ lost} &=& \mathrm{Heat\ out} \phantom{\int} \nonumber\\
+  - \frac{dq}{dt} \; \Delta V &=& \grad \cdot \bv{h} \; \Delta V \nonumber\\
+  - \frac{dq}{dt} &=& \grad \cdot \bv{h}
+\end{eqnarray}
+
+We can also derive the \emph{integral} form of equation (3.13).
+We start with Gauss' Theorem and replace vector $\bv{C}$ with heat flux vector $\bv{h}$.
+%% Eq. (3.22)
+\begin{equation}
+  \int_S \bv{h} \cdot \bv{n} \; da = \int_V \grad \cdot \bv{h} \; dV
+\end{equation}
+
+We replace the $\grad \cdot \bv{h}$ in the right-hand integral with $-dq/dt$
+and then simplify using $\int dV = \Delta V$ and $Q = q\;\Delta V$.
+\begin{equation*}
+  \int_V \grad \cdot \bv{h} \; dV
+  = \int_V \Big(-\frac{dq}{dt}\Big) \; dV
+  = - \frac{dQ}{dt}
+\end{equation*}
+
+We now consider a different case, where heat energy is generated 
+at some point $P$ inside a block of material.
+Let $W$ represent the energy liberated per second at that point.
+We wish to describe the heat vector field near $P$.
+Our ``physical intuition'' tells us that $\bv{h}$ is radial.
+That is, each vector $\bv{h}$ points away from $P$.
+We imagine a spherical surface $S$ inside the material, 
+centered around $P$ and with radius $R$.
+This allows us to write a simple equation for the heat flux,
+where $4 \pi R^2$ is the area of the sphere.
+Note that the dot on the left-hand side is the dot product operator
+whereas the dot on the right-hand side is the multiplication operator.
+And $h$ is the magnitude of $\bv{h}$.
+%% Eq. (3.23)
+\begin{equation}
+  \int_S \bv{h} \cdot \bv{n} \; da = h \cdot 4 \pi R^2
+\end{equation}
+
+The right-hand side is equal to $W$ so we can specify magnitude $h$ in terms of $W$.
+Since both the heat vector $\bv{h}$ and the unit vector $\bv{e}_r$ are radial,
+we can multiply the unit vector $\bv{e}_r$ by magnitude $h$ to get an equation for vector $\bv{h}$.
+%% Eq. (3.24)
+\begin{eqnarray}
+  h &=& \frac{W}{4 \pi R^2} \nonumber\\
+  \bv{h} &=& \frac{W}{4 \pi R^2} \bv{e}_r
+\end{eqnarray}
+
+We wish to find an equation for the most general kind of heat flow,
+with only the condition that heat is conserved.
+We start with equation (2.44), which specifies the differential equation for heat conduction.
+Remember that heat flows ``downhill'' (hence the minus sign)
+and $\kappa$ is the thermal conductivity constant.
+%% Eq. (3.25)
+\begin{equation}
+  \bv{h} = - \kappa \; \grad T
+\end{equation}
+
+Now we take equation (3.21) and multiply both sides by $-1$.
+Then we use equation (3.25) to replace $\bv{h}$ with $-\kappa\;\grad T$.
+Finally, we rearrange, cancel the two negative signs,
+and replace $\grad \cdot \grad$ with the Laplacian operator $\nabla^2$.
+%% Eq. (3.26)
+\begin{eqnarray}
+  \frac{dq}{dt} &=& - \grad \cdot \bv{h} \nonumber\\
+  &=& - \grad \cdot (- \kappa \; \grad T) \phantom{\int} \nonumber\\
+  &=& \kappa \; \nabla^2 T
+\end{eqnarray}
+
+\newpage
+We now make the assumption that a small change in the heat energy of the material
+is proportional to a small change in the temperature of the material, by some constant $c_v$.
+That is, $\Delta q = c_v \; \Delta T$.
+We differentiate both sides with respect to time.
+%% Eq. (3.27)
+\begin{equation}
+  \frac{dq}{dt} = c_v \frac{dT}{dt}
+\end{equation}
+
+We replace $dq/dt$ with $(\kappa\;\nabla^2 T)$ and rearrange.
+We may also replace the constant $\kappa / c_v$ with the diffusion symbol $D$.
+%% Eqs. (3.28), (3.29)
+\begin{eqnarray}
+  \frac{dT}{dt} &=& \frac{\kappa}{c_v} \nabla^2 T \\
+  &=& D \; \nabla^2 T
+\end{eqnarray}
+
+This is the \emph{heat diffusion equation}.
+It is a differential equation in $x, y, z,$ and $t$ for temperature $T$.
+We expand it here to show everything.
+\begin{equation*}
+  \dfdx{T}{t} = \frac{\kappa}{c_v}
+  \Bigg( \dfdx{^2T}{x^2} + \dfdx{^2T}{y^2} + \dfdx{^2T}{z^2} \Bigg)
+\end{equation*}
+

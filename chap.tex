@@ -1,0 +1,39 @@
+%% chap.tex
+
+\documentclass{report}
+\pagestyle{plain}
+
+% Packages
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{latexsym}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage[usenames]{color}
+
+% Commands
+\newcommand{\grad}{\boldsymbol{\nabla}}
+\newcommand{\bv}[1]{\boldsymbol{#1}}
+\newcommand{\dfdx}[2]{\frac{\partial #1}{\partial #2}}
+
+% Easy-vision mode
+\pagecolor{black}
+\color{green}
+
+% Use European-style paragraphs.
+% IMPORTANT: \begin{document} must follow for this to work.
+\setlength{\parindent}{0pt} 
+\setlength{\parskip}{1.3ex} 
+\begin{document}
+
+\chapter{Electrostatics}
+\input{4-1.tex}
+\input{4-2.tex}
+\input{4-3.tex}
+\input{4-4.tex}
+\input{4-5.tex}
+\input{4-6.tex}
+\input{4-7.tex}
+\input{4-8.tex}
+
+\end{document}

@@ -1,0 +1,34 @@
+%% 5-10.tex
+\section{The field in a cavity of a conductor}
+
+What is the electric field inside an empty cavity within a conductor?
+Figure 5-12 shows the cross section of a conductor containing an empty cavity.
+There is no continuous source of current in the conductor, and
+positive charges reside on the outside surface of the conductor.
+We use a false hypothesis and Stokes's Theorem (3.38) to show that 
+an electric field cannot exist inside the empty cavity.
+
+The hypothesis is that the surface of the cavity contains 
+a cluster of positive charges on one side and a cluster of negative charges on the other.
+Some arbitrary loop $\Gamma$ crosses the cavity
+between these two clusters and returns through the conductor.
+We now compute the integral of the electric field $\bv{E}$ around the loop $\Gamma$.
+Inside the cavity, the integral along $\Gamma$ is nonzero,
+because the positive and negative charges produce an electric field.
+On the return trip, the integral along $\Gamma$ is zero,
+because $\bv{E}=0$ everywhere inside the conductor.
+Therefore the integral around the entire loop must be nonzero.
+%% nonumber
+\begin{equation*}
+  \oint \bv{E} \cdot d\bv{s} \not = 0 \; ???
+\end{equation*}
+
+Stokes' Theorem says this integral is equal to the integral of an infinite number of
+infinitesimal $\grad \times \bv{E}$ circulations in the surface bounded by $\Gamma$.
+But $\grad \times \bv{E} = 0$ in electrostatics.
+So the total integral of the circulations is zero, which means the 
+integral around $\Gamma$ is also zero.
+This contradicts the hypothesis, so the hypothesis must be false.
+There are no clusters of positive and negative charges on the surface of the cavity.
+As such, no electric fields can exist inside the cavity.
+

@@ -1,0 +1,29 @@
+%% 4-8.tex
+\section{Field lines; equipotential surfaces}
+
+We wish to duplicate the drawing in Figure 4-13.
+It shows field lines and equipotentials for two equal and opposite point charges.
+We use the fact that $\boldsymbol{E} = -\nabla\phi$.
+We first calculate the scalar potential field $\phi$ 
+and then the vector electric field $\boldsymbol{E}$.
+We simplify our formula for $\phi$ by letting $q_p = +1$ and $q_n = -1$.
+We also let $k = (4\pi\epsilon_0)^{-1}$.
+We compute $r_p$ and $r_n$ separately.
+\begin{eqnarray}
+  r_p &=& \sqrt{(x-x_p)^2 + (y-y_p)^2 + (z-z_p)^2} \nonumber\\
+  r_n &=& \sqrt{(x-x_n)^2 + (y-y_n)^2 + (z-z_n)^2} \nonumber\\
+  \phi(x,y,z) &=& k \bigg( \frac{1}{r_p} - \frac{1}{r_n} \bigg) \nonumber
+\end{eqnarray}
+
+The program \textsf{point-charges.c} has been partially written and debugged.
+To run the program, type ``\textsf{./point-charges}'' on the command line with no arguments.
+A Cocoa window is slowly filled line by line.
+To stop the program, kill the window.
+
+The program has a number of deficiencies.
+It is written to a Cocoa window rather than a file.
+It displays the equipotentials in solid red on a green background,
+rather than black dotted lines on a white background.
+The field lines are not displayed at all.
+The program obviously needs more work.
+

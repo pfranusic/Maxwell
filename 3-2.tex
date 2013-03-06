@@ -1,0 +1,88 @@
+%% 3-2.tex
+\section{The flux of a vector field}
+
+Suppose we have some block of material, inside of which is
+some closed surface $S$ which encloses the volume $V$.
+We wish to compute a rate called \emph{heat flux}, 
+the total amount of heat energy that flows through surface $S$ per unit time.
+There are several ways to do this.
+One way is to compute the flow through an infinitesimal surface area $da$ 
+and then integrate over the entire surface $S$.
+Another way is to split the volume into two smaller volumes,
+compute the flow through each volume, and then take the sum.
+
+We write $da$ for the area of an infinitesimal surface element.
+And $\bv{n}$ is a unit vector that is orthogonal to $da$.
+We have a field of heat flux vectors $\bv{h}(x,y,z)$.
+One of these vectors points through $da$ at some angle $\theta$.
+Let $h_n$ be the component of $\bv{h}$ that is parallel to $\bv{n}$.
+%% Eq. (3.9)
+\begin{equation}
+  h_n = \bv{h} \cdot \bv{n}
+\end{equation}
+
+We express the heat flow through infinitesimal surface element $da$.
+%% Eq. (3.10)
+\begin{equation}
+  \bv{h} \cdot \bv{n} \; da
+\end{equation}
+
+The total amount of heat flow through the surface $S$ is simply the integral.
+%% Eq. (3.11)
+\begin{equation}
+  \mathrm{Total\ heat\ flow\ outward\ through\ }S = \int_S \bv{h} \cdot \bv{n} \; da
+\end{equation}
+
+We can generalize equation (3.11) for any vector field.
+For example, consider the electric field $\bv{E}(x,y,z)$ instead of the heat field $\bv{h}(x,y,z)$.
+We can replace vector $\bv{h}$ with vector $\bv{E}$.
+%% Eq. (3.12)
+\begin{equation}
+  \mathrm{Flux\ of\ } \bv{E} \mathrm{\ through\ the\ surface\ }S = \int_S \bv{E} \cdot \bv{n} \; da
+\end{equation}
+
+It is important to note that this definition holds for any surface $S$ closed or open.
+We have just used it for closed surfaces; we will shortly use it for open surfaces.
+
+Consider the situation where \emph{heat is conserved}.
+Energy is neither generated nor absorbed inside the block of material, 
+and $Q$ is the amount of heat inside the surface $S$.
+The conservation of energy law tells us that the total heat flow through $S$
+is equal to the rate of heat loss from the inside.
+%% Eq. (3.13)
+\begin{equation}
+  \int_S \bv{h} \cdot \bv{n} \; da = - \frac{dQ}{dt}
+\end{equation}
+
+Now we shall demonstrate an interesting fact, the \emph{principle of superposition}
+for fluxes in any vector field $\bv{C}$.
+Consider the volume $V$ in Figure 3-4 which is cut into two smaller volumes $V_1$ and $V_2$.
+The outer surface $S$ is the sum of the two smaller outer surfaces $S_a$ and $S_b$.
+Both smaller volumes have the inner surface $S_{ab}$ in common.
+
+Surface $S_1$ is the sum of outer surface $S_a$ and inner surface $S_{ab}$.
+The flux through surface $S_1$ is the sum of the fluxes through $S_a$ and $S_{ab}$.
+The unit vector $\bv{n}_1$ points \emph{out} of the volume $V_1$.
+%% Eq. (3.14)
+\begin{equation}
+  \mathrm{Flux\ through\ }S_1 = 
+  \int_{S_a} \bv{C} \cdot \bv{n} \; da + \int_{S_{ab}} \bv{C} \cdot \bv{n}_1 \; da
+\end{equation}
+
+Surface $S_2$ is the sum of outer surface $S_b$ and inner surface $S_{ab}$.
+The flux through surface $S_2$ is the sum of the fluxes through $S_b$ and $S_{ab}$.
+The unit vector $\bv{n}_2$ points \emph{out} of the volume $V_2$.
+%% Eq. (3.15)
+\begin{equation}
+  \mathrm{Flux\ through\ }S_2 = 
+  \int_{S_b} \bv{C} \cdot \bv{n} \; da + \int_{S_{ab}} \bv{C} \cdot \bv{n}_2 \; da
+\end{equation}
+
+Here's what makes the principle of superpositon hold for fluxes.
+The two unit vectors $\bv{n}_1$ and $\bv{n}_2$ point in opposite directions.
+That is, $\bv{n}_1 = -\bv{n}_2$.  This makes the sum of the two fluxes through
+the inner surface $S_{ab}$ equal to zero.
+%% Eq. (3.16)
+\begin{equation}
+  \int_{S_{ab}} \bv{C} \cdot \bv{n}_1 \; da = - \int_{S_{ab}} \bv{C} \cdot \bv{n}_2 \; da
+\end{equation}

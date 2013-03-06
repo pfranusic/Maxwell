@@ -1,0 +1,137 @@
+%% 4-2.tex
+\section{Coulomb's law; superposition}
+
+Coulomb's law says that --- between two charges at rest ---
+there is a force directly proportional to the product of the charges
+and inversely proportional to the square of the distance between them.
+This force is along a straight line through the two charges.
+$\bv{F}_1$ is the force on $q_1$ and $\bv{F}_2$ is the force on $q_2$.
+$\bv{e}_{12}$ is the unit vector that points from $q_2$ to $q_1$.
+$r_{12}$ is the distance between $q_1$ and $q_2$.
+
+%% Eq. (4.9)
+\hspace{2em}\emph{Coulomb's law:}
+\vspace{-0.5em}
+\begin{equation}
+  \bv{F}_1 = \frac{1}{4\pi\epsilon_0} \; \frac{q_1 q_2}{r^2_{12}} \; \bv{e}_{12} = - \bv{F}_2
+\end{equation}
+
+The constant of proportionality $1/4\pi\epsilon_0$ is exactly 
+$10^{-7}$ kilogram meters per coulomb squared, times the speed of light squared.
+The speed of light $c$ is approximately $3 \times 10^8$ meters per second.
+A newton has units kilogram meters per second squared.
+A volt has units newton meters per coulomb.
+Therefore $1/4\pi\epsilon_0$ is approximately 9 Giga volt meters per coulomb.
+%% Eq. (4.10)
+\begin{eqnarray}
+  \frac{1}{4\pi\epsilon_0} &=& 
+  \Big( 10^{-7} \; \textstyle{\frac{\mathrm{kg} \cdot \mathrm{mt}}{\mathrm{coul}^2}} \Big)
+  \Big( c \; \textstyle{\frac{\mathrm{mt}}{\mathrm{sec}}} \Big)^2 \nonumber\\
+  &\approx& 9.0 \times 10^9 \; \textstyle{\frac{\mathrm{volt} \cdot \mathrm{mt}}{\mathrm{coul}}}
+\end{eqnarray}
+
+When there are more than two charges present,
+the \emph{principle of superposition} says that the force on any one charge
+is the vector sum of the Coulomb forces from each of the other charges.
+
+We now introduce the idea of an electric field $\bv{E}$.
+Consider equation (4.9), where $\bv{F}_1$ is the force on $q_1$.
+Let $\bv{E}(1)$ be the force per unit charge on $q_1$ due to $q_2$.
+In other words, let $\bv{E}(1) = \bv{F}_1 / q_1$.
+We also say that ``$\bv{E}(1)$ is the electric field at the point (1).''
+%% Eq. (4.11)
+\begin{equation}
+  \bv{E}(1) = \frac{1}{4\pi\epsilon_0} \; \frac{q_2}{r^2_{12}} \; \bv{e}_{12}
+\end{equation}
+
+Let $\bv{r}_{12}$ be the displacement vector from point (2) to point (1).
+Then $r_{12}$ is the distance scalar between point (2) and point (1).
+The unit vector $\bv{e}_{12}$ can be written in terms of $\bv{r}_{12}$.
+This allows us to rewrite Eq. (4.11) in terms of $\bv{r}_{12}$.
+\begin{eqnarray*}
+  \bv{r}_{12} &=& \big((x_1 - x_2), (y_1 - y_2), (z_1 - z_2)\big) \\
+  r_{12} &=& \sqrt{(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2} \\
+  \bv{e}_{12} &=& \frac{\bv{r}_{12}}{|\bv{r}_{12}|} = \frac{\bv{r}_{12}}{r_{12}} \\
+  \bv{E}(1) &=& \frac{1}{4\pi\epsilon_0} \; \frac{q_2}{r^3_{12}} \; \bv{r}_{12}
+\end{eqnarray*}
+
+Of course, $\bv{E}(1)$ is a vector, so we really have three equations ---
+one for $E_x(1)$, one for $E_y(1)$, and one for $E_z(1)$.
+Remember that the symbol ``(1)'' expands to $(x_1,y_1,z_1)$ and 
+that vector $\bv{r}_{12}$ has the three components
+$(x_1 - x_2)$, $(y_1 - y_2)$, and $(z_1 - z_2)$.
+%% Eq. (4.12)
+\begin{eqnarray}
+  E_x (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{x_1 - x_2}{r^3_{12}} \\
+  E_y (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{y_1 - y_2}{r^3_{12}} \nonumber\\
+  E_z (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{z_1 - z_2}{r^3_{12}} \nonumber
+\end{eqnarray}
+
+Now we expand the situation to include many charges, not just two.
+Let $q_j$ be the magnitude of the $j$th charge.
+Let $\bv{r}_{1j}$ be the displacement vector from $q_j$ to $q_1$.
+Then $r_{1j}$ is the distance scalar between $q_j$ and $q_1$.
+The principle of superposition allows us to simply add the forces.
+%% Eq. (4.13)
+\begin{equation}
+  \bv{E}(1) = \sum_j \frac{1}{4\pi\epsilon_0} \; \frac{q_j}{r^2_{1j}} \; \bv{e}_{1j}
+\end{equation}
+
+Again, since $\bv{E}(1)$ is a vector, we have three equations.
+Note that $\bv{r}_{1j}$ has the three components $(x_1 - x_j)$, $(y_1 - y_j)$, and $(z_1 - z_j)$.
+%% Eq. (4.14)
+\begin{eqnarray}
+  E_x (x_1,y_1,z_1) = \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(x_1 - x_j)}{r^3_{1j}} \\
+  E_y (x_1,y_1,z_1) = \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(y_1 - y_j)}{r^3_{1j}} \nonumber\\
+  E_z (x_1,y_1,z_1) = \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(z_1 - z_j)}{r^3_{1j}} \nonumber
+\end{eqnarray}
+
+Consider the situation where we have a ``glob'' of point charges that are 
+spread out from each other.  We may think of the field as a continuous smear --- 
+a ``distribution'' of charges.  See Figure 4-1.
+Let $\rho (x,y,z)$ be the \emph{charge density} at any point $(x,y,z)$
+within the glob, the amount of charge per unit volume.
+In mks, this would be coulombs per meter cubed.
+In Figure 4-1, $\rho (2)$ is charge density at the point $(x_2,y_2,z_2)$.
+It is approximately $\Delta q_2 / \Delta V_2$, some small amount of charge
+per unit volume centered at point (2).  Therefore
+%% Eq. (4.15)
+\begin{equation}
+  \Delta q_2 = \rho (2) \; \Delta V_2
+\end{equation}
+
+Now we take Eq. (4.13), replace the sum with an integral, 
+move the constant $1 / 4 \pi \epsilon_0$ outside the integral,
+replace $q_j$ with $\rho(2) dV_2$, and $r_{1j}$ with $r_{12}$.
+Note that point (2) no longer represents a single point, but
+now represents any point $(x_2,y_2,z_2)$ within the glob.
+%% Eq. (4.16)
+\begin{equation}
+  \bv{E}(1) = \frac{1}{4\pi\epsilon_0}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}}
+  \frac{\rho(2) \; \bv{e}_{12}}{r^2_{12}} \; dV_2
+\end{equation}
+
+Replacing $\bv{e}_{12}$ with $\bv{r}_{12} / r_{12}$ we get
+%% Eq. (4.17)
+\begin{equation}
+  \bv{E}(1) = \frac{1}{4\pi\epsilon_0}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}}
+  \frac{\rho(2) \; \bv{r}_{12}}{r^3_{12}} \; dV_2
+\end{equation}
+
+These integral must be written in explicit detail in order to calculate things.
+Again, $\bv{E}(1)$ has three components.
+%% Eq. (4.18)
+\begin{eqnarray}
+  E_x (x_1,y_1,z_1) &=& \frac{1}{4\pi\epsilon_0}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}}
+  \frac{\rho(x_2,y_2,z_2) \; (x_1 - x_2)}{r_{12}^3} dx_2 \; dy_2 \; dz_2 \\
+  E_y (x_1,y_1,z_1) &=& \frac{1}{4\pi\epsilon_0}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}}
+  \frac{\rho(x_2,y_2,z_2) \; (y_1 - y_2)}{r_{12}^3} dx_2 \; dy_2 \; dz_2 \nonumber\\
+  E_z (x_1,y_1,z_1) &=& \frac{1}{4\pi\epsilon_0}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}}
+  \frac{\rho(x_2,y_2,z_2) \; (z_1 - z_2)}{r_{12}^3} dx_2 \; dy_2 \; dz_2 \nonumber
+\end{eqnarray}
+

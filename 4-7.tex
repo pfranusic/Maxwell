@@ -1,0 +1,43 @@
+%% 4-7.tex
+\section{Field of a sphere of charge}
+
+Figure 4-11 shows a small sphere with radius $a$
+and filled with a uniform distribution of charge with density $\rho$.
+The point $P$ lies outside the surface of the small sphere at a distance $R$.
+We imagine that $P$ lies on the surface $S$ of a larger sphere with radius $R$.
+This surface $S$ is concentric with the surface of the small sphere.
+Now we ask: What is the electric field at $P$?
+
+First we express the flux through the larger sphere.
+We assume that $\bv{E}$ is everywhere directed away from the center of the sphere.
+Given that $E = |\bv{E}|$, and that the area of surface $S$ is $4\pi R^2$, 
+the flux through surface $S$ is simply the product of $E$ and the surface area.
+%% nonumber
+\begin{equation*}
+  \int E_n \; da = E \cdot 4 \pi R^2
+\end{equation*}
+
+Gauss' law expresses flux differently.
+Gauss' law expresses flux in terms of the total charge $Q$ within surface $S$.
+%% nonumber
+\begin{equation*}
+  \int E_n \; da = \frac{Q}{\epsilon_0}
+\end{equation*}
+
+Both equations express the flux of $\bv{E}$.
+The first equation expresses the flux \emph{through} $S$.
+The second equation expresses the flux \emph{within} $S$.
+They are the same thing! So we can make the right sides equal.
+%% nonumber
+\begin{equation*}
+  E \cdot 4 \pi R^2 = \frac{Q}{\epsilon_0}
+\end{equation*}
+
+Now we simply divide both sides by $4\pi R^2$ to get an equation for $E$,
+the magnitude of $\bv{E}$ at any point outside surface $S$.
+(Somehow $R$ is replace by $r$).
+%% Eq. (4.39)
+\begin{equation}
+  E = \frac{1}{4\pi\epsilon_0} \; \frac{Q}{r^2}
+\end{equation}
+

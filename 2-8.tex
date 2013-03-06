@@ -1,0 +1,27 @@
+%% 2-8.tex
+\section{Pitfalls}
+
+There are two pitfalls associated with the use of $\grad$.
+The first concerns the cross-product of gradients.
+Consider the expression $(\grad \psi) \times (\grad \phi)$.
+We might be tempted to mentally replace each $\grad$ with an $\bv{A}$
+so that we would have $(\bv{A} \psi) \times (\bv{A} \phi)$.
+This expression reduces to 0 by Equation (2.3),
+because the directions of $(\bv{A} \psi)$ and $(\bv{A} \phi)$ are the same.
+But this is wrong! We can't make this replacement.
+The directions of $(\grad \psi)$ and $(\grad \phi)$ are different.
+The lesson here is to think before mentally replacing $\grad$ with a vector.
+
+The other pitfall concerns the polar coordinate system.
+We have a set of rules that work out nicely in a rectangular coordinate system.
+For example, the $x$ component of $\nabla^2 \bv{h}$ is easy to write.
+%% Eq. (2.60)
+\begin{equation}
+  (\nabla^2 \bv{h})_x
+  = \Bigg(\dfdx{^2}{x^2}+\dfdx{^2}{y^2}+\dfdx{^2}{z^2}\Bigg) h_x
+  = \nabla^2 h_x
+\end{equation}
+But in a polar coordinate system, the radial component of $\nabla^2 \bv{h}$
+is not easy to write.  It's not $\nabla^2 h_r$. It's something more complex.
+The lesson here is to stick to rectangular coordinate systems and avoid trouble.
+

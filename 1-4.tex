@@ -1,0 +1,103 @@
+%% 1-4.tex
+\section{The laws of electromagnetism}
+
+Here are four laws of electromagnetism.
+They are expressed using the two ideas, flux and circulation,
+in conjunction with the two fields, $\bv{E}$ and $\bv{B}$.
+
+The first law describes the flux of $\bv{E}$.
+Given some arbitrary closed surface $S'$ (e.g. a spherical membrane) 
+and some charges in the space bounded by that surface,
+the flux of electric field $\bv{E}$ through closed surface $S'$ is
+the net charge inside divided by $\epsilon_0$ (a convenient constant).
+%% Eq. (1.6)
+\begin{equation}
+  \mathrm{Flux\ of\ } \bv{E} \mathrm{\ thru\ } S' = 
+  \frac{\mathrm{net\ charge\ inside}}{\epsilon_0}
+\end{equation}
+
+The second law describes the circulation of $\bv{E}$.
+Given some arbitrary open surface $S$ (e.g. a thin disc) whose edge is the curve $C$,
+the circulation of electric field $\bv{E}$ around curve $C$ is equal to the negative of
+the time derivative of the flux of magnetic field $\bv{B}$ through open surface $S$.
+%% Eq. (1.7)
+\begin{equation}
+  \mathrm{Circ\ of\ } \bv{E} \mathrm{\ around\ } C =
+  -\frac{d}{dt} \Big( \mathrm{flux\ of\ } \bv{B} \mathrm{\ thru\ } S \Big)
+\end{equation}
+
+\newpage
+
+The third law describes the flux of $\bv{B}$.
+Given some arbitrary closed surface $S'$
+the flux of magnetic field $\bv{B}$ through closed surface $S'$ is zero.
+There are no magnetic ``charges'' inside the surface.
+\begin{equation}
+  \mathrm{Flux\ of\ } \bv{B} \mathrm{\ thru\ } S' = 0
+\end{equation}
+
+The fourth law describes the circulation of $\bv{B}$.
+Given some arbitrary open surface $S$ whose edge is the curve $C$,
+the circulation of magnetic field $\bv{B}$ around curve $C$ is proportional to 
+the time derivative of the flux of electric field $\bv{E}$ through open surface $S$, plus
+the flux of the electric current $I$ through open surface $S$, divided by $\epsilon_0$.
+The constant $c^2$ is the square of the velocity of light.
+It appears because magnetism is in reality a relativistic effect of electricity.
+\begin{eqnarray}
+  c^2 (\mathrm{Circ\ of\ } \bv{B} \mathrm{\ around\ } C)
+  &=& \frac{d}{dt} \Big( \mathrm{flux\ of\ } \bv{E} \mathrm{\ thru\ } S \Big) \nonumber\\
+  & & \quad  + \; \frac{\mathrm{flux\ of\ } I \mathrm{\ thru\ } S}{\epsilon_0}
+\end{eqnarray}
+
+The most remarkable consequence of our equations is that 
+the combination of Eq. (1.7) and Eq. (1.9) contains the explanation of
+the radiation of electromagnetic effects over large distances.
+Consider an antenna element: a current changes and
+causes the magnetic field around the element to change.
+By \mbox{Eq. (1.7)} the changing magnetic field causes a changing electric field.
+And by \mbox{Eq. (1.9)} the changing electric field causes a changing magnetic field.
+This interchange continues indefinitely.
+The electric and magnetic fields work their way through space
+without the need of charges or currents.
+
+
+\begin{comment}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+We can verify that equations (1.6), (1.7), and (1.9) produce the correct units.
+In equation (1.6), the ``net charge inside'' is in coulombs.
+The constant $e_0$ is defined in equation (4.10).
+It's value is approximately $8.854 \times 10^{-12}$ coul$^2$/nt$\cdot$mt$^2$.
+One of the coul terms cancels in the division, and the result is the units for electric flux.
+\begin{equation*}
+  \frac{coul}{\left( \frac{coul^2}{nt \cdot mt^2} \right)}
+  = \frac{nt \cdot mt^2}{coul}
+  \equiv \mathrm{Electric\ flux}
+\end{equation*}
+
+In equation (1.7), the time derivative of the units for magnetic flux
+has the effect of dividing by seconds.
+The result is the units for electric circulation.
+\begin{equation*}
+  \frac{d}{dt} \left( \frac{nt \cdot mt \cdot sec}{coul} \right)
+  = \frac{nt \cdot mt}{coul}
+  \equiv \mathrm{Electric\ circ.}
+\end{equation*}
+
+In equation (1.9), we use only the first term, and then we divide both sides by $c^2$.
+The time derivative of the units for electric flux has the effect of dividing by seconds.
+The two mt$^2$ terms cancel each other in the division.
+One of the sec terms also cancels.
+The result is the units for magnetic circulation.
+\begin{equation*}
+  \frac{\frac{d}{dt} \left(\frac{nt \cdot mt^2}{coul} \right)}
+  {\frac{mt^2}{sec^2}} =
+  \frac{\frac{nt \cdot mt^2}{coul \cdot sec}}
+  {\frac{mt^2}{sec^2}} =
+  \frac{nt \cdot sec}{coul}
+  \equiv \mathrm{Magnetic\ circ.}
+\end{equation*}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{comment}
+

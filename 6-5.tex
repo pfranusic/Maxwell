@@ -1,0 +1,123 @@
+%% 6-5.tex
+\section{The dipole approximation for an arbitrary distribution}
+
+The electric potential at point P for a collection of charges
+is given in Equation (4.24) and is repeated here.
+%% Eq. (6.21)
+\begin{equation}
+  \phi = \frac{1}{4\pi\epsilon_0} \sum_i \frac{q_i}{r_i}
+\end{equation}
+
+If each $r_i$ is approximated by $R$ and $\sum q_i=Q$ then
+%% Eq. (6.22)
+\begin{equation}
+  \phi = \frac{1}{4\pi\epsilon_0} \frac{1}{R} \sum q_i = \frac{Q}{4\pi\epsilon_0 R}
+\end{equation}
+
+We want a better approximation for $r_i$.
+We can subtract from $R$ the component of $\bv{d}_i$ in the direction of $R$.
+We use the unit vector $\bv{e}_r$ to do this.
+%% Eq. (6.23)
+\begin{equation}
+  r_i \approx R - \bv{d}_i \cdot \bv{e}_r
+\end{equation}
+
+We invert both sides and then transform the denominator
+of the right side into a square.
+\begin{eqnarray*}
+  \frac{1}{r_i}
+  &\approx& \frac{1}{R - \bv{d}_i \cdot \bv{e}_r} \\
+  &\approx& \frac{1}{(R - \bv{d}_i \cdot \bv{e}_r)}
+    \frac{(R + \bv{d}_i \cdot \bv{e}_r)}
+	 {(R + \bv{d}_i \cdot \bv{e}_r)} \\
+  &\approx& \frac{R + \bv{d}_i \cdot \bv{e}_r}
+    {R^2 - (\bv{d}_i \cdot \bv{e}_r)^2}
+\end{eqnarray*}
+
+When $d_i \ll R$, the $(\bv{d}_i\cdot\bv{e}_r)^2$ term in the denominator is negligible,
+so we can discard it.
+\begin{eqnarray*}
+  &\approx& \frac{R + \bv{d}_i \cdot \bv{e}_r}{R^2} \\
+  &\approx& \frac{1}{R} + \frac{\bv{d}_i \cdot \bv{e}_r}{R^2}
+\end{eqnarray*}
+
+Factoring out $1/R$ we have
+%% Eq. (6.24)
+\begin{equation}
+  \frac{1}{r_i} \approx \frac{1}{R} \left( 1 + \frac{\bv{d}_i \cdot \bv{e}_r}{R} \right)
+\end{equation}
+
+We substitute this approximation for $1/r_i$ into Equation (6.21).
+%% nonumber
+\begin{eqnarray*}
+  \phi &=& \frac{1}{4\pi\epsilon_0} \sum_i \frac{q_i}{r_i} \\
+  &=& \frac{1}{4\pi\epsilon_0} \sum_i q_i
+  \left(\frac{1}{R} + \frac{\bv{d}_i \cdot \bv{e}_r}{R^2}\right) \\
+  &=& \frac{1}{4\pi\epsilon_0} \left( \frac{\sum q_i}{R}
+   + \sum_i q_i \frac{\bv{d}_i\cdot\bv{e}_r}{R^2} \right)
+\end{eqnarray*}
+
+We can express $\phi$ as a Taylor expansion.
+\textcolor{red}{What are the details? What is $f(x)$? What is $x_0$?}
+The subsequent terms of the expansion are indicated by the ellipsis.
+%% Eq. (6.25)
+\begin{equation}
+  \phi = \frac{1}{4\pi\epsilon_0} \left( \frac{Q}{R}
+  + \sum_i q_i \frac{\bv{d}_i \cdot \bv{e}_r}{R} + \cdots \right)
+\end{equation}
+
+We wish to express the second term with the dipole moment $\bv{p}$.
+In order to do this, we need to show that
+%% nonumber
+\begin{equation*}
+  \sum q_i \left( \bv{d}_i \cdot \bv{e}_r \right)
+  = \left( \sum q_i \bv{d}_i \right) \cdot \bv{e}_r
+\end{equation*}
+
+First we expand the sum.
+Next we expand the dot products to get a sum of $q_i$ products.
+Finally we drop the parentheses.
+\begin{eqnarray*}
+  \sum q_i ( \bv{d}_i \cdot \bv{e}_r )
+  &=& q_1(\bv{d}_1\cdot\bv{e}_r) \;+\;
+      q_2(\bv{d}_2\cdot\bv{e}_r) \;+\;
+      q_3(\bv{d}_3\cdot\bv{e}_r) \;+\; \cdots \\
+  &=& q_1 ( d_{1x}e_{rx} + d_{1y}e_{ry} + d_{1z}e_{rz} ) + \\
+  & & q_2 ( d_{2x}e_{rx} + d_{2y}e_{ry} + d_{2z}e_{rz} ) + \\
+  & & q_3 ( d_{3x}e_{rx} + d_{3y}e_{ry} + d_{3z}e_{rz} ) + \;\cdots \\
+  &=& q_1d_{1x}e_{rx} + q_1d_{1y}e_{ry} + q_1d_{1z}e_{rz} + \\
+  & & q_2d_{2x}e_{rx} + q_2d_{2y}e_{ry} + q_2d_{2z}e_{rz} + \\
+  & & q_3d_{3x}e_{rx} + q_3d_{3y}e_{ry} + q_3d_{3z}e_{rz} + \;\cdots
+\end{eqnarray*}
+
+Now we sort the terms by the three $e_r$ components.
+The terms for each component can be replaced by a sum.
+Finally, we compress the vector components,
+and this gives us the dot product we want.
+\begin{eqnarray*}
+  \phantom{ \sum q_i ( \bv{d}_i \cdot \bv{e}_r )}
+  &=& (q_1 d_{1x} + q_2 d_{2x} + q_3 d_{3x} + \cdots) e_{rx} + \\
+  & & (q_1 d_{1y} + q_2 d_{2y} + q_3 d_{3y} + \cdots) e_{ry} + \\
+  & & (q_1 d_{1z} + q_2 d_{2z} + q_3 d_{3z} + \cdots) e_{rz} \\
+  &=& \left(\sum q_i d_{ix} \right) e_{rx} + 
+      \left(\sum q_i d_{ix} \right) e_{ry} + 
+      \left(\sum q_i d_{ix} \right) e_{rz} \\
+  &=& \left( \sum q_i \bv{d}_i \right) \cdot \bv{e}_r \qquad\Box
+\end{eqnarray*}
+
+We now use this result to define the dipole moment vector $\bv{p}$.
+%% Eq. (6.26)
+\begin{equation}
+  \bv{p} = \sum q_i \bv{d}_i
+\end{equation}
+
+We take the second term of Equation (6.25) and replace
+$\sum q_i(\bv{d}_i\cdot\bv{e}_r)$ with 
+the dipole moment component $\bv{p}\cdot\bv{e}_r$.
+The result is the same formula as Equation (6.13),
+the formula for a dipole potential.
+%% Eq. (6.27)
+\begin{equation}
+  \phi = \frac{1}{4\pi\epsilon_0} \frac{\bv{p} \cdot \bv{e}_r}{R^2}
+\end{equation}
+

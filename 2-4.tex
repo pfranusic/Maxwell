@@ -1,0 +1,52 @@
+%% 2-4.tex
+\section{The operator $\grad$}
+
+Now we can do something that is extremely amusing and ingenious ---
+and characteristic of the things that make mathematics beautiful.
+We can abstract the gradient $\grad$ away from the $T$.
+We take the $T$ out of equation (2.26) and leave the operators
+``hungry for something to differentiate.''
+% Eq. (2.27)
+\begin{equation}
+  \dfdx{}{x} = \dfdx{}{x'} \cos \theta - \dfdx{}{y'} \sin \theta
+\end{equation}
+
+We make $\grad$ a \emph{vector operator}.
+Just as the vector $\grad T$ in equation (2.14) has three components,
+so does the vector operator $\grad$.
+% Eq. (2.28)
+\begin{equation}
+  \grad = \Bigg( \dfdx{}{x}, \dfdx{}{y}, \dfdx{}{z} \Bigg)
+\end{equation}
+
+Another way of writing the vector operator $\grad$ is 
+$(\nabla_x,\nabla_y,\nabla_z)$ where
+% Eq. (2.29)
+\begin{equation}
+  \nabla_x = \dfdx{}{x} \qquad
+  \nabla_y = \dfdx{}{y} \qquad
+  \nabla_z = \dfdx{}{z}
+\end{equation}
+
+We need to remember that the operator $\grad$ always precedes a scalar variable.
+(For example, $\grad T$). 
+An expression with $\grad$ on the right side of the scalar variable is meaningless.
+For example, $T \grad$ has an $x$-component that is not a number.
+% Eq. (2.30)
+\begin{equation}
+  T \dfdx{}{x}
+\end{equation}
+
+What is to be differentiated must be placed on the right of the $\grad$.
+The commutative law for multiplication does not apply for $\grad$.
+However, if we have a scalar $T$ and a vector $\bv{A}$ 
+we can represent their product either way.
+% Eq. (2.31)
+\begin{equation}
+  T \bv{A} = \bv{A} T
+\end{equation}
+
+What is the direction of the vector $\grad T$?
+On a three-dimensional graph,
+it's the direction of the steepest uphill slope of $T(x,y,z)$.
+

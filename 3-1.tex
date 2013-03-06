@@ -1,0 +1,115 @@
+%% 3-1.tex
+\section{Vector integrals; the line integral of $\grad\Psi$}
+
+Everything in Chapter 2 can be summarized with one rule:
+the operators $\partial/\partial x$, $\partial/\partial y$, and $\partial/\partial z$
+are the three components of the vector operator $\grad$.
+In this chapter we explain the meanings of the divergence and curl operations,
+and we develop three important theorems.
+
+We begin with the fundamental theorem of calculus for one variable.
+The function $f(x)$ can be imagined as a curve that hovers above and below the x-axis.
+The function $f'(x)$ is the slope of $f(x)$.  That is, $f'(x) = df/dx$.
+The fundamental theorem states that, given two points $a$ and $b$,  
+the total difference between $f(a)$ and $f(b)$ can be computed by 
+adding up all the small differences $df$ between $a$ and $b$,
+where each small difference $df$ is the product of a slope $f'(x)=df/dx$ and a small distance $dx$.
+\begin{equation*}
+  f(b) - f(a) = \int _a ^b f'(x) dx
+\end{equation*}
+
+We are given a scalar field $\psi(x,y,z)$.
+These are the values $\psi$ of some scalar quantity (such as temperature)
+at each point $(x,y,z)$ in some three-dimensional space (such as a block of concrete).
+We are also given a vector field $\grad\psi(x,y,z)$.
+These are the slopes $(\frac{\partial\psi}{\partial x},
+\frac{\partial\psi}{\partial y},\frac{\partial\psi}{\partial z})$
+of scalar field $\psi$ at each point $(x,y,z)$.
+
+\newpage
+Consider Figure 3-1, where $\Gamma$ is some curve in the scalar field $\psi(x,y,z)$ 
+that starts at point $(1)=(x_1,y_1,z_1)$ and ends at point $(2)=(x_2,y_2,z_2)$.
+The vector $d\bv{s}= (\scriptstyle{\partial x,\partial y,\partial z})$
+is an infinitesimal line element along the curve $\Gamma$.
+We may write the fundamental theorem of calculus in vector form.
+The total difference between $\psi(1)$ and $\psi(2)$ can be computed by 
+adding up all the small differences $\partial\psi$ between $(1)$ and $(2)$,
+where each small difference $\partial\psi$ is the scalar product of 
+a slope $\grad\psi=(\frac{\partial\psi}{\partial x},
+\frac{\partial\psi}{\partial y},\frac{\partial\psi}{\partial z})$
+and a small distance $d\bv{s}= (\scriptstyle{\partial x,\partial y,\partial z})$.
+%% The lower limit of the integral... oh what a mess. But it works. :-)
+%% Eq. (3.1)
+\begin{equation}
+  \psi(2) - \psi(1) = \int
+  _{\hspace{-2ex}\raisebox{-1ex}{\mbox{$\genfrac{}{}{0pt}{1}{(1)}{\mathrm{along\ }\Gamma}$}}}
+  ^{(2)} (\grad \psi) \cdot d\bv{s}
+\end{equation}
+
+In Figure 3-2, 
+$(\grad\psi)_t$ is the component of $\grad\psi$ in the direction of $\Delta \bv{s}_i$.
+Simple trigonometry gives us $(\grad\psi)_t = |\grad\psi| \cos \theta$,
+where $\theta$ is the angle between $\grad\psi$ and $(\grad\psi)_t$.
+$\Delta s_i$ is the magnitude of the vector $\Delta \bv{s}_i$.
+I.e., $\Delta s_i = |\Delta \bv{s}_i|$.
+So we have $(\grad\psi)_t \Delta s = |\grad\psi| |\Delta \bv{s}_i| \cos \theta$.
+Now we apply the identity $|\bv{a}||\bv{b}|\cos\theta=\bv{a}\cdot\bv{b}$ 
+and drop the $i$ subscripts to get
+%% Eq. (3.2)
+\begin{equation}
+  (\grad \psi)_t \; \Delta s = (\grad \psi) \cdot \Delta \bv{s}
+\end{equation}
+
+The small interval vector $\Delta \bv{R} = (\Delta x, \Delta y, \Delta z)$
+was introduced in section 2-3.  We now take equation (2.15), where
+$\Delta T = \grad T \cdot \Delta \bv{R}$, and replace terms to get 
+\begin{equation*}
+  \Delta \psi_1 = (\grad \psi)_1 \cdot \Delta \bv{s}_1
+\end{equation*}
+
+In figure 3-2, point $a$ is the first point after (1) along the curve $\Gamma$.
+It's obvious that $\Delta \psi_1 = \psi(a) - \psi(1)$.
+Combining these two equations for $\Delta \psi_1$ we have
+%% Eq. (3.3)
+\begin{equation}
+  \Delta \psi_1 = \psi(a) - \psi(1) = (\grad \psi)_1 \cdot \Delta \bv{s}_1
+\end{equation}
+
+We do the same thing for $\Delta \psi_2$.
+%% Eq. (3.4)
+\begin{equation}
+  \Delta \psi_2 = \psi(b) - \psi(a) = (\grad \psi)_2 \cdot \Delta \bv{s}_2
+\end{equation}
+
+We add equations (3.3) and (3.4) to get the sum $\Delta \psi_1 + \Delta \psi_2$.
+Notice that the $\psi(a)$ terms cancel out.
+%% Eq. (3.5)
+\begin{equation}
+  \psi(b) - \psi(1) = (\grad \psi)_1 \cdot \Delta \bv{s}_1 + (\grad \psi)_2 \cdot \Delta \bv{s}_2
+\end{equation}
+
+If we add up all of the segments along $\Gamma$ we get
+%% Eq. (3.6)
+\begin{equation}
+  \psi(2) - \psi(1) = \sum (\grad \psi)_i \cdot \Delta \bv{s}_i
+\end{equation}
+
+It's okay to drop the parentheses around $(\grad\psi)$.
+%% Eq. (3.7)
+\begin{equation}
+  (\grad \psi) \cdot d\bv{s} = \grad \psi \cdot d\bv{s}
+\end{equation}
+
+Consider the sum in equation (3.6).
+If we let $\Delta \bv{s}_i$ approach 0
+we can replace the summation sign $\sum$ with an integral sign $\int$.
+This theorem is correct for any curve $\Gamma$ from (1) to (2).
+
+%% Eq. (3.8)
+\vspace{2ex} \hspace{2em} \textsc{Fundamental Theorem:}
+\begin{equation}
+  \psi(2) - \psi(1) = \int
+  _{\hspace{-3ex}\raisebox{-1ex}{\mbox{$\genfrac{}{}{0pt}{1}{(1)}{\mathrm{any\ curve}}$}}}
+  ^{(2)} \grad \psi \cdot d\bv{s} 
+\end{equation}
+

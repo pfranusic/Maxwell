@@ -1,0 +1,48 @@
+%% 3-8.tex
+\section{Summary}
+
+\textsc{The $\grad$ Operator}:\\
+The operators $\partial/\partial x$, $\partial/\partial y$, and $\partial/\partial z$
+can be considered as the three components of a vector operator $\grad$,
+and the formulas which result from vector algebra by treating this operator
+as a vector are correct.
+%% nonumber
+\begin{equation*}
+  \grad = \Bigg( \dfdx{}{x} , \dfdx{}{y} , \dfdx{}{z} \Bigg)
+\end{equation*}
+
+\textsc{The Fundamental Theorem of Calculus}:\\
+The difference of the values of a scalar field at two points is equal to the
+line integral of the tangential component of the gradient of that scalar along
+any curve at all between the first and second points.
+%% Eq. (3.42)
+\begin{equation}
+  \psi(2) - \psi(1) = \int
+  _{\hspace{-3ex}\raisebox{-1ex}{\mbox{$\genfrac{}{}{0pt}{1}{(1)}{\mathrm{any\ curve}}$}}}
+  ^{(2)} \grad \psi \cdot d\bv{s} 
+\end{equation}
+
+\textsc{Gauss' Theorem}:\\
+The surface integral of the normal component of an arbitrary vector
+over a closed surface is equal to the integral of the divergence of the vector over
+the volume interior to the surface.
+%% Eq. (3.43)
+\begin{equation}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{closed}}{\mathrm{surface}}}
+  \bv{C} \cdot \bv{n} \; da =
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{volume}}{\mathrm{inside}}}
+  \grad \cdot \bv{C} \; dV
+\end{equation}
+
+\textsc{Stokes' Theorem}:\\
+The line integral of the tangential component of an arbitrary vector
+around a closed loop is equal to the surface integral of the normal component
+of the curl of that vector over any surface which is bounded by the loop.
+%% Eq. (3.44)
+\begin{equation}
+  \oint\limits_{\mathrm{boundry}}
+  \bv{C} \cdot d\bv{s} = 
+  \int\limits_{\mathrm{surface}}
+  (\grad \times \bv{C}) \cdot \bv{n} \; da
+\end{equation}
+

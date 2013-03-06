@@ -1,0 +1,90 @@
+%% 4-6.tex
+\section{Gauss's law; divergence of $\bv{E}$}
+
+Remember that $E_n$ is the normal component of $\bv{E}$
+at some point in the ``middle'' of some infinitesimal area $da$
+on the surface of $S$,
+where $\bv{E}$ is the electric field produced by all charges,
+and $\bv{n}$ is the unit vector pointing outward at right angles to the surface.
+
+Suppose instead of one charge $q$ we have two charges $q_1$ and $q_2$.
+Then $\bv{E}_1$ represents the electric field produced by $q_1$ alone,
+and $\bv{E}_2$ represents the electric field produced by $q_2$ alone.
+Because of the principle of superposition for electric fields, 
+we can say that $\bv{E} = \bv{E}_1 + \bv{E}_2$.
+
+Now we can take the left side of Eq. (4.32) and replace the $E_n$ inside the integral
+with the sum of the two normal components of $\bv{E}_1$ and $\bv{E}_2$.
+That is, $E_{1n}$ and  $E_{2n}$.
+By the rules of calculus we can split the single integral into two separate integrals.
+%% Eq. (4.33)
+\begin{equation}
+  \int_S \left( E_{1n} + E_{2n} \right) \; da =
+  \int_S E_{1n} \; da + \int_S E_{2n} \; da 
+\end{equation}
+
+Each of the integrals on the right is either 0 or some charge $q_i$ divided by $\epsilon_0$.
+This gives rise to Gauss' law for the flux of an electric field produced by one or more charges.
+We replace the right side of Eq. (4.32) with a term that reflects the superposition principle.
+
+\hspace{2em}\emph{Gauss' law:}
+\vspace{-1em}
+%% Eq. (4.34)
+\begin{equation}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{any\ closed}}{\mathrm{surface\ }S}}
+  E_n \; da = \frac{\mathrm{sum\ of\ charges\ inside}}{\epsilon_0}
+\end{equation}
+
+The ``sum of charges inside'' can be represented by $Q_{\mathrm{int}}$.
+And the normal component $E_n$ is simply the dot product of 
+the two vectors $\bv{E}$ and $\bv{n}$.
+%% Eq. (4.35)
+\begin{equation}
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{any\ closed}}{\mathrm{surface\ }S}}
+  \bv{E} \cdot \bv{n} \; da = \frac{Q_{\mathrm{int}}}{\epsilon_0}
+\end{equation}
+
+For a discrete number of charges, $Q_{\mathrm{int}}$ is the 
+sum of all charges inside $S$.
+%% Eq. (4.36)
+\begin{equation}
+  Q_{\mathrm{int}} = \sum_{\mathrm{inside\ }S} q_i
+\end{equation}
+
+If we want to think of the charges as evenly distributed in the volume within the surface,
+then we need to use the idea of charge density, represented by $\rho$ (charge per volume).
+We subdivide the volume $V$ into an infinite number of infinitesimal volumes $dV$.
+The charge of each volume is $\rho \; dV$.
+Since there are an infinite number of charges, we need to integrate to get the total charge.
+%% Eq. (4.37)
+\begin{equation}
+  Q_{\mathrm{int}} = 
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{volume}}{\mathrm{inside\ }S}}
+  \rho \; dV
+\end{equation}
+
+Now we write a differential form of Gauss' law.
+We start with Eq. (3.17), replace vector $\bv{C}$ with vector $\bv{E}$,
+and replace $\Delta V$ with $dV$.  This gives us
+%% nonumber
+\begin{equation*}
+  \int \bv{E} \cdot \bv{n} = \left( \grad \cdot \bv{E} \right) dV
+\end{equation*}
+
+The left side of this equation is the same as the left side of Eq. (4.35).
+So we can set both right sides equal to each other.
+We can also replace the $Q_{\mathrm{int}}$ with $\rho \; dV$, 
+since $dV$ is an infinitesimal volume.
+%% nonumber
+\begin{equation*}
+  \left( \grad \cdot \bv{E} \right) dV = \frac{\rho \; dV}{\epsilon_0}
+\end{equation*}
+
+Finally, we simplify by dividing both sides by $dV$.
+This is the differential form of Gauss' law.
+It is also one of Maxwell's equations.
+%% Eq. (4.38)
+\begin{equation}
+  \grad \cdot \bv{E} = \frac{\rho}{\epsilon_0}
+\end{equation}
+

@@ -1,0 +1,71 @@
+%% 5-6.tex
+\section{A sheet of charge; two sheets}
+
+Now we'll calculate the field produced by a sheet of charge.
+The sheet is an infinite plane and the charge is distributed uniformly.
+Let $\sigma$ represent the charge per unit area.
+
+Using arguments of symmetry,
+we assume the electric field is normal to the plane at every point near the plane.
+We also assume the electric field has the same magnitude on each side of the plane.
+
+Figure 5-6 shows part of a \textsc{uniformly charged sheet} and a \textsc{gaussian surface}.
+This is a box that extends on both sides of the sheet.
+Four sides of the box are perpendicular to the sheet.
+The other two sides are parallel to the sheet.
+The two sides each have area $A$.
+One side has electric field $\bv{E}_1$ and the opposite side $\bv{E}_2$.
+
+We use Gauss' law to equate the flux to the charge inside the Gaussian surface.
+We make several assumptions:
+that there are no other charges except those in the plane,
+that both $\bv{E}_1$ and $\bv{E}_2$ are normal to the plane,
+and that the $\bv{E}_1$ and $\bv{E}_2$ have equal magnitude $E$.
+Therefore the flux through each parallel face is $EA$.
+The charge on the part of the sheet enclosed by the box is $\sigma A$.
+%% nonumber
+\begin{equation*}
+  EA + EA = \frac{\sigma A}{\epsilon_0}
+\end{equation*}
+
+Dividing both sides by $2A$ we have
+%% Eq. (5.3)
+\begin{equation}
+  E = \frac{\sigma}{2 \epsilon_0}
+\end{equation}
+
+If there are other charges besides those on the sheet,
+then $\bv{E}_1$ and $\bv{E}_2$ will have different magnitudes.
+In the simplification, we can only divide both sides by $A$.
+%% Eq. (5.4)
+\begin{equation}
+  E_1 + E_2 = \frac{\sigma}{\epsilon_0}
+\end{equation}
+
+Next we consider two sheets of charge.
+The two sheets are parallel planes and contain opposite charges.
+Let $+\sigma$ and $-\sigma$ be the two charge densities.
+Using arguments of symmetry, we assume the electric field is normal to each plane.
+
+Figure 5-7(b) shows a side view of the two sheets with a Gaussian surface 
+that surrounds part of the negative sheet, similar to Figure 5-6.
+According to Equation (5.3), this produces the electric field 
+magnitude $-E = -\sigma / 2 \epsilon_0$ (or simply $E = \sigma / 2 \epsilon_0$).
+Figure 5-7(b) shows the same thing for the positive sheet.
+Here, the electric field magnitude is $+E = +\sigma / 2 \epsilon_0$.
+We simply add the two fields to get $E$ between the sheets.
+%% Eqs. (5.5) and (5.6)
+\begin{equation}
+  E_{\mathrm{between}} = \sigma / \epsilon_0
+\end{equation}
+
+Figure 5-7(a) shows a side view of the two sheets and a Gaussian surface.
+Again, this is a box, except that it surrounds equal parts of each sheet.
+Four sides are perpendicular to the sheets and the remaining two sides 
+are parallel to the sheets.
+It is easy to see that the box contains equal and opposite charges that cancel each other.
+Therefore the electric field outside the box is zero.
+\begin{equation}
+  E_{\mathrm{outside}} = 0
+\end{equation}
+

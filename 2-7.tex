@@ -1,0 +1,187 @@
+%% 2-7.tex
+\section{Second derivatives of vector fields}
+
+In this section we explore the various possible second derivatives.
+We are given three expressions:
+(1) the gradient $\grad T$, 
+(2) the dot product $\grad \cdot \bv{h}$, and 
+(3) the cross product $\grad \times \bv{h}$.
+We then take each one of these and try to compute the gradient,
+the dot product, and the vector product with $\grad$.
+Here are all nine possible combinations.
+Two result in a scalar, three in a vector, and four don't make any sense.
+\begin{eqnarray*}
+  && \grad (\grad T) \to \mathrm{??} \\
+  && \grad \cdot (\grad T) \to \mathrm{scalar} \\
+  && \grad \times (\grad T) \to \mathrm{vector} \\
+  && \grad (\grad \cdot \bv{h}) \to \mathrm{vector} \\
+  && \grad \cdot (\grad \cdot \bv{h}) \to \mathrm{??} \\
+  && \grad \times (\grad \cdot \bv{h}) \to \mathrm{??} \\
+  && \grad (\grad \times \bv{h}) \to \mathrm{??} \\
+  && \grad \cdot (\grad \times \bv{h}) \to \mathrm{scalar} \\
+  && \grad \times (\grad \times \bv{h}) \to \mathrm{vector} \\
+\end{eqnarray*}
+
+We dispense with the four expressions that don't make sense.
+The expression $\grad (\grad T)$ says to compute the gradient of gradient $\grad T$.
+This doesn't make sense because $\grad T$ is a vector 
+and we can only compute the gradient of a scalar.
+The expression $\grad (\grad \times \bv{h})$ doesn't make sense for the same reason, 
+because $(\grad \times \bv{h})$ is a vector.
+The expression $\grad \cdot (\grad \cdot \bv{h})$ says to 
+compute the dot product of vector $\grad$ and scalar $(\grad \cdot \bv{h})$.
+This doesn't make sense because we can only compute the dot product of two vectors.
+The expression $\grad \times (\grad \cdot \bv{h})$ says to
+compute the cross product of vector $\grad$ and scalar $(\grad \cdot \bv{h})$.
+This doesn't make sense because we can only compute the cross product of two vectors.
+
+Out of the nine possible combinations, only five make sense.
+These are labeled (a) through (e) and summarized in the equation below.
+The implications of each expression is discussed in the remainder of this section.
+%% Eq. (2.45)
+\begin{eqnarray}
+  \mathrm{(a)} & & \grad \cdot \big( \grad T \big) \nonumber \\
+  \mathrm{(b)} & & \grad \times \big( \grad T \big) \nonumber \\
+  \mathrm{(c)} & & \grad \big( \grad \cdot \bv{h} \big) \\
+  \mathrm{(d)} & & \grad \cdot \big( \grad \times \bv{h} \big) \nonumber \\
+  \mathrm{(e)} & & \grad \times \big( \grad \times \bv{h} \big) \nonumber
+\end{eqnarray}
+
+Expression (b), $\grad \times \big( \grad T \big)$, is the curl of the gradient of $T$.
+The curl of any gradient is the zero vector $\bv{0} = (0,0,0)$.
+%% Eq. (2.46)
+\begin{equation}
+  \mathrm{curl\ } \big( \mathrm{grad\ } T \big) = \grad \times \big( \grad T \big) = \bv{0}
+\end{equation}
+
+The reason is easily demonstrated.
+Consider the $z$ component of the cross product.
+The two partial derivatives will always be identical to each other
+because of the identity in equation (2.8), so the subtraction will always result in 0.
+%% Eq. (2.47)
+\begin{eqnarray}
+  \big[ \grad \times (\grad T) \big]_z
+  &=& \nabla_x (\grad T)_y - \nabla_y (\grad T)_x \nonumber \\
+  &=& \dfdx{}{x} \Bigg( \dfdx{T}{y} \Bigg) - \dfdx{}{y} \Bigg( \dfdx{T}{x} \Bigg)
+\end{eqnarray}
+
+Expression (d), $\grad \cdot (\grad \times \bv{h})$, has the same form as equation (2.4).
+The proof is quick.
+%% Eq. (2.48)
+\begin{equation}
+  \bv{A} \cdot (\bv{A} \times \bv{B}) = 0
+\end{equation}
+
+We simply replace $\bv{A}$ with $\grad$ and $\bv{B}$ with $\bv{h}$.
+The divergence of the curl of any vector $\bv{h}$ is zero.
+%% Eq. (2.49)
+\begin{equation}
+  \grad \cdot (\grad \times \bv{h}) = \mathrm{div\ } (\mathrm{curl\ } \bv{h}) = 0
+\end{equation}
+
+\newpage
+Expressions (b) and (d) allow us to make two theorems.
+The first theorem is derived from equation (2.46)
+except that it uses the scalar $\psi$ instead of the scalar $T$.
+The theorem turns things around a little.
+It says that if the curl of some vector $A$ is zero,
+then $A$ must be the gradient of some scalar $\psi$.
+%% Eq. (2.50)
+\begin{eqnarray}
+  & &  \mathbf{Theorem:} \phantom{XXXXXXXXXXXXXXXXXXXXXXXX} \nonumber\\
+  & &  \mathrm{If\ } \quad \grad \times \bv{A} = 0 \nonumber\\
+  & &  \mathrm{there\ is\ a\ } \quad \psi \nonumber\\
+  & &  \mathrm{such\ that\ } \quad \bv{A} = \grad \psi
+\end{eqnarray}
+
+The second theorem is derived from equation (2.49)
+except that it uses the vector $\bv{C}$ instead of the vector $\bv{h}$.
+Again, things are turned around a little.
+The theorem says that if the divergence of some vector $D$ is zero,
+then $D$ must be the curl of some vector $\bv{C}$.
+%% Eq. (2.51)
+\begin{eqnarray}
+  & &  \mathbf{Theorem:} \phantom{XXXXXXXXXXXXXXXXXXXXXXXX} \nonumber\\
+  & &  \mathrm{If\ } \quad \grad \cdot \bv{D} = 0 \nonumber\\
+  & &  \mathrm{there\ is\ a\ } \quad \bv{C} \nonumber\\
+  & &  \mathrm{such\ that\ } \quad \bv{D} = \grad \times \bv{C}
+\end{eqnarray}
+
+Expression (a), $\grad \cdot (\grad T)$, doesn't always result in 0, so we expand it.
+The three components of $\grad$ are $\nabla_x$, $\nabla_y$, and $\nabla_z$.
+The three components of $\grad T$ are $(\nabla_x T)$, $(\nabla_y T)$, and $(\nabla_z T)$.
+%% Eq. (2.52)
+\begin{eqnarray}
+  \grad \cdot (\grad T)
+  &=& \nabla_x ( \nabla_x T) + \nabla_y ( \nabla_y T) + \nabla_z ( \nabla_z T) \nonumber \\
+  &=& \dfdx{^2T}{x^2} + \dfdx{^2T}{y^2} + \dfdx{^2T}{z^2}
+\end{eqnarray}
+
+Because multiplication is associative, we can move the parentheses around.
+We then introduce a new symbol, $\nabla^2$.
+%% Eq. (2.53)
+\begin{equation}
+  \grad \cdot (\grad T) = \grad \cdot \grad T = (\grad \cdot \grad) T = \nabla^2 T
+\end{equation}
+
+The symbol $\nabla^2$ is called the \emph{Laplacian} and it's a scalar operator.
+Just like $\grad$, it's hungry for something to differentiate.
+%% Eq. (2.54)
+\begin{equation}
+  \mathrm{Laplacian\ } = \nabla^2 = \dfdx{^2}{x^2} + \dfdx{^2}{y^2} + \dfdx{^2}{z^2}
+\end{equation}
+
+Expression (e), $\grad \times (\grad \times \bv{h})$, has the same form as equation (2.6).
+%% Eq. (2.55)
+\begin{equation}
+  \bv{A} \times (\bv{B} \times \bv{C})
+  = \bv{B} (\bv{A} \cdot \bv{C}) - \bv{C}(\bv{A} \cdot \bv{B})
+\end{equation}
+
+The second term on the right side, $\bv{C}(\bv{A} \cdot \bv{B})$,
+is the arithmetic product of vector $\bv{C}$ and scalar $\bv{A} \cdot \bv{B}$.
+Since multiplication is commutative, we can replace this term
+with $(\bv{A} \cdot \bv{B}) \bv{C}$.
+%% Eq. (2.56)
+\begin{equation}
+  \bv{A} \times (\bv{B} \times \bv{C})
+  = \bv{B} (\bv{A} \cdot \bv{C}) - (\bv{A} \cdot \bv{B}) \bv{C}
+\end{equation}
+
+Now we replace both $\bv{A}$ and $\bv{B}$ with $\grad$.
+We also replace $\bv{C}$ with $\bv{h}$.
+%% Eq. (2.57)
+\begin{equation}
+  \grad \times (\grad \times \bv{h})
+  = \grad (\grad \cdot \bv{h}) - (\grad \cdot \grad) \bv{h}
+\end{equation}
+
+We can use the Laplacian in the second term on the right side.
+%% Eq. (2.58)
+\begin{equation}
+  \grad \times (\grad \times \bv{h})
+  = \grad (\grad \cdot \bv{h}) - \nabla^2 \bv{h}
+\end{equation}
+
+Expression (c), $\grad (\grad \cdot h)$, is just some vector.
+There isn't anything remarkable about it.
+We now summarize things.
+We also add expression (f), the Laplacian of vector $\bv{h}$.
+The vector $\nabla^2 \bv{h}$ has three components: $(\nabla^2 \bv{h}_x)$,
+$(\nabla^2 \bv{h}_y)$, and $(\nabla^2 \bv{h}_z)$.
+%% Eq. (2.59)
+\begin{eqnarray}
+  \mathrm{(a)} & & \grad \cdot (\grad T) = \nabla^2 T = \mathrm{a\ scalar\ field} \nonumber\\
+  \mathrm{(b)} & & \grad \times (\grad T) = (0,0,0) \nonumber\\
+  \mathrm{(c)} & & \grad (\grad \cdot \bv{h}) = \mathrm{a\ vector\ field} \nonumber\\
+  \mathrm{(d)} & & \grad \cdot (\grad \times \bv{h}) = 0 \\
+  \mathrm{(e)} & & \grad \times (\grad \times \bv{h}) = 
+               \grad (\grad \cdot \bv{h}) - \nabla^2 \bv{h} \nonumber\\
+  \mathrm{(f)} & & (\grad \cdot \grad)\bv{h} =
+               \nabla^2 \bv{h} = \mathrm{a\ vector\ field} \nonumber
+\end{eqnarray}
+
+The dot product $(\grad \cdot \grad)$ makes sense and defines the Laplacian.
+But the cross product $(\grad \times \grad)$ doesn't make sense,
+because of the identity in equation (2.3), $\bv{A} \times \bv{A} = 0$.
+

@@ -2,10 +2,11 @@
 \section{Coulomb's law; superposition}
 
 Coulomb's law says that --- between two charges at rest ---
-there is a force directly proportional to the product of the charges
+there is a force directly proportional to the product of the charges,
 and inversely proportional to the square of the distance between them.
 This force is along a straight line through the two charges.
-$\bv{F}_1$ is the force on $q_1$ and $\bv{F}_2$ is the force on $q_2$.
+$\bv{F}_1$ is the force on $q_1$.
+$\bv{F}_2$ is the force on $q_2$.
 $\bv{e}_{12}$ is the unit vector that points from $q_2$ to $q_1$.
 $r_{12}$ is the distance between $q_1$ and $q_2$.
 
@@ -16,11 +17,10 @@ $r_{12}$ is the distance between $q_1$ and $q_2$.
   \bv{F}_1 = \frac{1}{4\pi\epsilon_0} \; \frac{q_1 q_2}{r^2_{12}} \; \bv{e}_{12} = - \bv{F}_2
 \end{equation}
 
-The constant of proportionality $1/4\pi\epsilon_0$ is exactly 
-$10^{-7}$ kilogram meters per coulomb squared, times the speed of light squared.
+In the mks system, the constant of proportionality $1/4\pi\epsilon_0$ 
+is defined as exactly $10^{-7}$ times the speed of light squared.
 The speed of light $c$ is approximately $3 \times 10^8$ meters per second.
-A newton has units kilogram meters per second squared.
-A volt has units newton meters per coulomb.
+A volt has units kilogram meters squared per coulomb seconds squared.
 Therefore $1/4\pi\epsilon_0$ is approximately 9 Giga volt meters per coulomb.
 %% Eq. (4.10)
 \begin{eqnarray}
@@ -62,9 +62,12 @@ that vector $\bv{r}_{12}$ has the three components
 $(x_1 - x_2)$, $(y_1 - y_2)$, and $(z_1 - z_2)$.
 %% Eq. (4.12)
 \begin{eqnarray}
-  E_x (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{x_1 - x_2}{r^3_{12}} \\
-  E_y (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{y_1 - y_2}{r^3_{12}} \nonumber\\
-  E_z (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{z_1 - z_2}{r^3_{12}} \nonumber
+  E_x (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{x_1 - x_2}
+  {[(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2]^{3/2}} \qquad \\
+  E_y (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{y_1 - y_2}
+  {[(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2]^{3/2}} \nonumber\\
+  E_z (x_1,y_1,z_1) &=& \frac{q_2}{4\pi\epsilon_0} \; \frac{z_1 - z_2}
+  {[(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2]^{3/2}} \nonumber
 \end{eqnarray}
 
 Now we expand the situation to include many charges, not just two.
@@ -78,19 +81,24 @@ The principle of superposition allows us to simply add the forces.
 \end{equation}
 
 Again, since $\bv{E}(1)$ is a vector, we have three equations.
-Note that $\bv{r}_{1j}$ has the three components $(x_1 - x_j)$, $(y_1 - y_j)$, and $(z_1 - z_j)$.
+Note that $\bv{e}_{1j}$ is replaced with $\bv{r}_{1j} / r_{1j}$,
+where $\bv{r}_{1j}$ has the three components $(x_1 - x_j)$, $(y_1 - y_j)$, and $(z_1 - z_j)$.
 %% Eq. (4.14)
 \begin{eqnarray}
-  E_x (x_1,y_1,z_1) = \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(x_1 - x_j)}{r^3_{1j}} \\
-  E_y (x_1,y_1,z_1) = \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(y_1 - y_j)}{r^3_{1j}} \nonumber\\
-  E_z (x_1,y_1,z_1) = \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(z_1 - z_j)}{r^3_{1j}} \nonumber
+  E_x (x_1,y_1,z_1) &=& \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(x_1 - x_j)}
+  {[(x_1 - x_j)^2 + (y_1 - y_j)^2 + (z_1 - z_j)^2]^{3/2}} \qquad \\
+  E_y (x_1,y_1,z_1) &=& \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(y_1 - y_j)}
+  {[(x_1 - x_j)^2 + (y_1 - y_j)^2 + (z_1 - z_j)^2]^{3/2}} \nonumber\\
+  E_z (x_1,y_1,z_1) &=& \sum_j \frac{q_j}{4\pi\epsilon_0} \; \frac{(z_1 - z_j)}
+  {[(x_1 - x_j)^2 + (y_1 - y_j)^2 + (z_1 - z_j)^2]^{3/2}} \nonumber
 \end{eqnarray}
 
-Consider the situation where we have a ``glob'' of point charges that are 
-spread out from each other.  We may think of the field as a continuous smear --- 
-a ``distribution'' of charges.  See Figure 4-1.
-Let $\rho (x,y,z)$ be the \emph{charge density} at any point $(x,y,z)$
-within the glob, the amount of charge per unit volume.
+Consider the situation where we have a collection of point charges 
+that are spread out from each other in space.
+We may approximate this spread as a continuous smear --- a \emph{distribution} of charges.
+(See Figure 4-1.)
+Let $\rho (x,y,z)$ be the \emph{charge density} at any point $(x,y,z)$ within the distribution,
+the amount of charge per unit volume.
 In mks, this would be coulombs per meter cubed.
 In Figure 4-1, $\rho (2)$ is charge density at the point $(x_2,y_2,z_2)$.
 It is approximately $\Delta q_2 / \Delta V_2$, some small amount of charge
@@ -104,7 +112,7 @@ Now we take Eq. (4.13), replace the sum with an integral,
 move the constant $1 / 4 \pi \epsilon_0$ outside the integral,
 replace $q_j$ with $\rho(2) dV_2$, and $r_{1j}$ with $r_{12}$.
 Note that point (2) no longer represents a single point, but
-now represents any point $(x_2,y_2,z_2)$ within the glob.
+now represents any point $(x_2,y_2,z_2)$ within the distribution.
 %% Eq. (4.16)
 \begin{equation}
   \bv{E}(1) = \frac{1}{4\pi\epsilon_0}
@@ -120,18 +128,30 @@ Replacing $\bv{e}_{12}$ with $\bv{r}_{12} / r_{12}$ we get
   \frac{\rho(2) \; \bv{r}_{12}}{r^3_{12}} \; dV_2
 \end{equation}
 
-These integral must be written in explicit detail in order to calculate things.
+This integral must be written out in explicit detail in order to calculate things.
 Again, $\bv{E}(1)$ has three components.
 %% Eq. (4.18)
 \begin{eqnarray}
-  E_x (x_1,y_1,z_1) &=& \frac{1}{4\pi\epsilon_0}
-  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}}
-  \frac{\rho(x_2,y_2,z_2) \; (x_1 - x_2)}{r_{12}^3} dx_2 \; dy_2 \; dz_2 \\
-  E_y (x_1,y_1,z_1) &=& \frac{1}{4\pi\epsilon_0}
-  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}}
-  \frac{\rho(x_2,y_2,z_2) \; (y_1 - y_2)}{r_{12}^3} dx_2 \; dy_2 \; dz_2 \nonumber\\
-  E_z (x_1,y_1,z_1) &=& \frac{1}{4\pi\epsilon_0}
-  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}}
-  \frac{\rho(x_2,y_2,z_2) \; (z_1 - z_2)}{r_{12}^3} dx_2 \; dy_2 \; dz_2 \nonumber
+  E_x (x_1,y_1,z_1) \! \! \! \! &=& \! \! \! \! \! \! \! \!
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}} \! \! \! \!
+  \frac{\rho(x_2,y_2,z_2) \; (x_1 - x_2) \; dx_2 \; dy_2 \; dz_2}
+       {4\pi\epsilon_0 [(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2]^{3/2}}
+       \\
+  E_y (x_1,y_1,z_1) \! \! \! \! &=& \! \! \! \! \! \! \! \!
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}} \! \! \! \!
+  \frac{\rho(x_2,y_2,z_2) \; (y_1 - y_2) \; dx_2 \; dy_2 \; dz_2}
+       {4\pi\epsilon_0 [(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2]^{3/2}}
+       \nonumber\\
+  E_z (x_1,y_1,z_1) \! \! \! \! &=& \! \! \! \! \! \! \! \!
+  \int\limits_{\genfrac{}{}{0pt}{1}{\mathrm{all}}{\mathrm{space}}} \! \! \! \!
+  \frac{\rho(x_2,y_2,z_2) \; (z_1 - z_2) \; dx_2 \; dy_2 \; dz_2}
+       {4\pi\epsilon_0 [(x_1 - x_2)^2 + (y_1 - y_2)^2 + (z_1 - z_2)^2]^{3/2}}
+       \nonumber
 \end{eqnarray}
+
+With this formula we can calculate the fields around any set of electrostatic charges.
+We can write software to implement the formula and describe a charge distribution,
+and then let a computer calculate the fields.
+However, sometimes it's easier to calculate the fields through clever guesswork,
+by being \emph{smart}.
 
